@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="哈希表,数组," />
+  <meta name="keywords" content="数组," />
 
 
 
@@ -79,17 +79,16 @@
 
 
 
-<meta name="description" content="题目描述在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。 返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量。形式上，我们希望下标数字 i 和 j 满足  i &lt; j 且有 (time[i] + time[j]) % 60 &#x3D;&#x3D; 0。 示例1: 输入：time &#x3D; [30,20,150,100,40] 输出：3 解释：这三对的总持续时间可被 60 整除： (time[">
+<meta name="description" content="题目描述给你一个下标从 0 开始的正整数数组 nums，请你找出并统计满足下述条件的三元组 (i, j, k) 的数目：  0 &lt;&#x3D; i &lt; j &lt; k &lt; nums.length nums[i]、nums[j] 和 nums[k] 两两不同 。换句话说：nums[i] !&#x3D; nums[j]、nums[i] !&#x3D; nums[k] 且 nums[j] !&#x3D; nums[k] 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1010. 总持续时间可被 60 整除的歌曲">
-<meta property="og:url" content="http://wuli-tao.github.io/2023/05/07/Leetcode-1010/index.html">
+<meta property="og:title" content="2475. 数组中不等三元组的数目">
+<meta property="og:url" content="http://wuli-tao.github.io/2023/05/10/Leetcode-2475/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="题目描述在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。 返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量。形式上，我们希望下标数字 i 和 j 满足  i &lt; j 且有 (time[i] + time[j]) % 60 &#x3D;&#x3D; 0。 示例1: 输入：time &#x3D; [30,20,150,100,40] 输出：3 解释：这三对的总持续时间可被 60 整除： (time[">
+<meta property="og:description" content="题目描述给你一个下标从 0 开始的正整数数组 nums，请你找出并统计满足下述条件的三元组 (i, j, k) 的数目：  0 &lt;&#x3D; i &lt; j &lt; k &lt; nums.length nums[i]、nums[j] 和 nums[k] 两两不同 。换句话说：nums[i] !&#x3D; nums[j]、nums[i] !&#x3D; nums[k] 且 nums[j] !&#x3D; nums[k] 。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-07T07:20:58.000Z">
-<meta property="article:modified_time" content="2023-05-07T08:51:23.460Z">
+<meta property="article:published_time" content="2023-05-10T03:05:44.000Z">
+<meta property="article:modified_time" content="2023-05-10T03:19:11.094Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="哈希表">
 <meta property="article:tag" content="数组">
 <meta name="twitter:card" content="summary">
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wuli-tao.github.io/2023/05/07/Leetcode-1010/"/>
+  <link rel="canonical" href="http://wuli-tao.github.io/2023/05/10/Leetcode-2475/"/>
 
 
 
 
 
-  <title>1010. 总持续时间可被 60 整除的歌曲 | MyBlog</title>
+  <title>2475. 数组中不等三元组的数目 | MyBlog</title>
   
 
 
@@ -288,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/05/07/Leetcode-1010/">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/05/10/Leetcode-2475/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -305,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">1010. 总持续时间可被 60 整除的歌曲</h1>
+          <h1 class="post-title" itemprop="name headline">2475. 数组中不等三元组的数目</h1>
         
 
         <div class="post-meta">
@@ -317,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-07T15:20:58+08:00">
-                2023-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-10T11:05:44+08:00">
+                2023-05-10
               </time>
             
 
@@ -327,28 +326,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">刷题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -371,7 +348,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  394 words
+                  332 words
                 </span>
               
 
@@ -408,25 +385,32 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。</p>
-<p>返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量。形式上，我们希望下标数字 i 和 j 满足  i &lt; j 且有 (time[i] + time[j]) % 60 == 0。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个下标从 0 开始的正整数数组 nums，请你找出并统计满足下述条件的三元组 (i, j, k) 的数目：</p>
+<ul>
+<li>0 &lt;= i &lt; j &lt; k &lt; nums.length</li>
+<li>nums[i]、nums[j] 和 nums[k] 两两不同 。<br>换句话说：nums[i] != nums[j]、nums[i] != nums[k] 且 nums[j] != nums[k] 。</li>
+</ul>
+<p>返回满足上述条件三元组的数目。</p>
 <p>示例1:</p>
-<p><strong>输入</strong>：time = [30,20,150,100,40]</p>
+<p><strong>输入</strong>：nums = [4,4,2,4,3]</p>
 <p><strong>输出</strong>：3</p>
-<p><strong>解释</strong>：这三对的总持续时间可被 60 整除：</p>
-<p>(time[0] = 30, time[2] = 150): 总持续时间 180</p>
-<p>(time[1] = 20, time[3] = 100): 总持续时间 120</p>
-<p>(time[1] = 20, time[4] = 40): 总持续时间 60</p>
+<p><strong>解释</strong>：下面列出的三元组均满足题目条件：</p>
+<ul>
+<li>(0, 2, 4) 因为 4 != 2 != 3</li>
+<li>(1, 2, 4) 因为 4 != 2 != 3</li>
+<li>(2, 3, 4) 因为 2 != 4 != 3</li>
+</ul>
+<p>共计 3 个三元组，返回 3 。</p>
+<p>注意 (2, 0, 4) 不是有效的三元组，因为 2 &gt; 0 。</p>
 <p>示例2:</p>
-<p><strong>输入</strong>：time = [60,60,60]</p>
-<p><strong>输出</strong>：3</p>
-<p><strong>解释</strong>：所有三对的总持续时间都是 120，可以被 60 整除。</p>
+<p><strong>输入</strong>：nums = [1,1,1,1,1]</p>
+<p><strong>输出</strong>：0</p>
+<p><strong>解释</strong>：不存在满足条件的三元组，所以返回 0 。</p>
 <span id="more"></span>
 
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>第一个想法就是一个二重循环遍历各个歌曲对之间能不能符合题目条件，时间复杂度O($n^2$)，会超时。</p>
-<p>对于有两个变量的题目，通常可以枚举其中一个变量，把它视作常量，从而转化成只有一个变量的问题。</p>
-<p>需要返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量，因此，每首歌曲对结果的影响因素是它的持续时间除以 60 后的余数。可以用一个长度为 60 的数组 cnt，用来表示余数出现的次数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numPairsDivisibleBy60</span>(<span class="params">self, time: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        cnt = [<span class="number">0</span>] * <span class="number">60</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> time:</span><br><span class="line">            cnt[num % <span class="number">60</span>] += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">30</span>):</span><br><span class="line">            ans = ans + cnt[i] * cnt[<span class="number">60</span>-i]</span><br><span class="line">        </span><br><span class="line">        ans = ans + (cnt[<span class="number">0</span>] * (cnt[<span class="number">0</span>] - <span class="number">1</span>)) // <span class="number">2</span> + (cnt[<span class="number">30</span>] * (cnt[<span class="number">30</span>] - <span class="number">1</span>)) // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>可用排序+共享来解题</p>
+<p>依次遍历不同的数字x，找到比x小的数的个数a，比x大的个数b，则对于x来说一共有x$\times$a$\times$b个符合条件的组合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">unequalTriplets</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        nums.sort()</span><br><span class="line">        start, ans = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, (x, y) <span class="keyword">in</span> <span class="built_in">enumerate</span>(pairwise(nums)): <span class="comment"># 打包可以之间得到i的下一个数</span></span><br><span class="line">            <span class="keyword">if</span> x != y:</span><br><span class="line">                ans += start * (i - start + <span class="number">1</span>) * (<span class="built_in">len</span>(nums) - <span class="number">1</span> - i)    <span class="comment"># 注意边界条件</span></span><br><span class="line">                start = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -442,8 +426,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 哈希表</a>
           
             <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
           
@@ -473,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/05/06/Leetcode-1419/" rel="next" title="1419. 数青蛙">
-                <i class="fa fa-chevron-left"></i> 1419. 数青蛙
+              <a href="/2023/05/09/Leetcode-1263/" rel="next" title="1263. 推箱子">
+                <i class="fa fa-chevron-left"></i> 1263. 推箱子
               </a>
             
           </div>
@@ -482,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/05/09/Leetcode-1263/" rel="prev" title="1263. 推箱子">
-                1263. 推箱子 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
