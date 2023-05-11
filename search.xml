@@ -70,6 +70,9 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>搜索</tag>
       </tags>
@@ -347,6 +350,9 @@
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>可用排序+共享来解题</p>
 <p>依次遍历不同的数字x，找到比x小的数的个数a，比x大的个数b，则对于x来说一共有x$\times$a$\times$b个符合条件的组合。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">unequalTriplets</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        nums.sort()</span><br><span class="line">        start, ans = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, (x, y) <span class="keyword">in</span> <span class="built_in">enumerate</span>(pairwise(nums)): <span class="comment"># 打包可以之间得到i的下一个数</span></span><br><span class="line">            <span class="keyword">if</span> x != y:</span><br><span class="line">                ans += start * (i - start + <span class="number">1</span>) * (<span class="built_in">len</span>(nums) - <span class="number">1</span> - i)    <span class="comment"># 注意边界条件</span></span><br><span class="line">                start = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>数组</tag>
       </tags>
@@ -385,12 +391,15 @@
 </ul>
 </li>
 </ol>
-<h2 id="后续发展"><a href="#后续发展" class="headerlink" title="后续发展"></a>后续发展</h2><ol>
+<h1 id="后续发展"><a href="#后续发展" class="headerlink" title="后续发展"></a>后续发展</h1><ol>
 <li>去复习一下计算机网络和操作系统有关知识</li>
 <li>刷题还要继续，要提升写代码的速度</li>
 <li>对数据结构还需要再了解一下</li>
 <li><strong>要去了解学习数据库已经计算机网络编程的一些技术栈</strong></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
   </entry>
 </search>
