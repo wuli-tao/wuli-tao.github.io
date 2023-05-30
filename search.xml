@@ -403,7 +403,7 @@
       </categories>
   </entry>
   <entry>
-    <title>Leetcode-1110</title>
+    <title>1110. 删点成林</title>
     <url>/2023/05/30/Leetcode-1110/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出二叉树的根节点 root，树上每个节点都有一个不同的值。</p>
 <p>如果节点值在 to_delete 中出现，我们就把该节点从树上删去，最后得到一个森林（一些不相交的树构成的集合）。</p>
