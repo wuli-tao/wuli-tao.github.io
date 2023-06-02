@@ -484,6 +484,17 @@
   <entry>
     <title>二分查找</title>
     <url>/2023/06/01/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="算法理论"><a href="#算法理论" class="headerlink" title="算法理论"></a>算法理论</h2><ul>
+<li><p>[0, …, n]左闭右闭</p>
+</li>
+<li><p>[0, …, n)左闭右开</p>
+</li>
+<li><p>(0, …, n]左开右闭</p>
+</li>
+<li><p>(0, …, n)左开右开</p>
+</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>要注意集合的开闭问题while left &lt; right or while left &lt;= right，要注意返回值left or left+1。（根据具体题目来判断）</p>
+]]></content>
   </entry>
 </search>
