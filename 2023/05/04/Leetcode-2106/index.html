@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://github.com/wuli-tao/wuli-tao.github.io/blob/master/image/2106_2.png?raw=true">
 <meta property="og:image" content="https://github.com/wuli-tao/wuli-tao.github.io/blob/master/image/2106_3.png?raw=true">
 <meta property="article:published_time" content="2023-05-04T06:14:15.000Z">
-<meta property="article:modified_time" content="2023-05-07T08:44:16.000Z">
+<meta property="article:modified_time" content="2023-06-03T08:26:11.866Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="二分查找">
 <meta property="article:tag" content="前缀和">
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  459 words
+                  581 words
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 min
+                  2 min
                 </span>
               
             </div>
@@ -446,6 +446,10 @@
 <span id="more"></span>
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>题目的关键是求从起点移动 k 步而实际在 x 轴上移动的最大区间范围，求出范围内的水果数量即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxTotalFruits</span>(<span class="params">self, fruits: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], startPos: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="number">0</span></span><br><span class="line">        n = <span class="built_in">len</span>(fruits)</span><br><span class="line">        <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">step</span>(<span class="params">left: <span class="built_in">int</span>, right: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> fruits[right][<span class="number">0</span>] &lt;= startPos:</span><br><span class="line">                <span class="keyword">return</span> startPos - fruits[left][<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">elif</span> fruits[left][<span class="number">0</span>] &gt;= startPos:</span><br><span class="line">                <span class="keyword">return</span> fruits[right][<span class="number">0</span>] - startPos</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">abs</span>(startPos - fruits[right][<span class="number">0</span>]), <span class="built_in">abs</span>(startPos - fruits[left][<span class="number">0</span>])) + \</span><br><span class="line">                    fruits[right][<span class="number">0</span>] - fruits[left][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每次固定住窗口右边界</span></span><br><span class="line">        <span class="keyword">while</span> right &lt; n:</span><br><span class="line">            <span class="built_in">sum</span> += fruits[right][<span class="number">1</span>]</span><br><span class="line">            <span class="comment"># 移动左边界</span></span><br><span class="line">            <span class="keyword">while</span> left &lt;= right <span class="keyword">and</span> step(left, right) &gt; k:</span><br><span class="line">                <span class="built_in">sum</span> -= fruits[left][<span class="number">1</span>]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">sum</span>)</span><br><span class="line">            right += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -586,7 +590,7 @@
               
                 <a href="/archives%7C%7C%20archive">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -608,7 +612,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -632,6 +636,14 @@
       
       
         <li class="recent_posts_li">
+          <a href="/2023/06/03/Leetcode-820/" title="Leetcode-820" target="_blank">Leetcode-820</a>
+        </li>
+      
+        <li class="recent_posts_li">
+          <a href="/2023/06/03/Leetcode-1156/" title="1156. 单字符重复子串的最大长度" target="_blank">1156. 单字符重复子串的最大长度</a>
+        </li>
+      
+        <li class="recent_posts_li">
           <a href="/2023/06/01/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找" target="_blank">二分查找</a>
         </li>
       
@@ -641,14 +653,6 @@
       
         <li class="recent_posts_li">
           <a href="/2023/05/30/Leetcode-1110/" title="1110. 删点成林" target="_blank">1110. 删点成林</a>
-        </li>
-      
-        <li class="recent_posts_li">
-          <a href="/2023/05/11/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E4%B8%80%E9%9D%A2/" title="今日头条一面" target="_blank">今日头条一面</a>
-        </li>
-      
-        <li class="recent_posts_li">
-          <a href="/2023/05/10/Leetcode-2475/" title="2475. 数组中不等三元组的数目" target="_blank">2475. 数组中不等三元组的数目</a>
         </li>
       
     </ul>

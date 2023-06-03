@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="字符串,滑动窗口," />
 
 
 
@@ -79,12 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyBlog">
-<meta property="og:url" content="http://wuli-tao.github.io/archives/2023/index.html">
+<meta name="description" content="题目描述如果字符串中的所有字符都相同，那么这个字符串是单字符重复的字符串。 给你一个字符串 text，你只能交换其中两个字符一次或者什么都不做，然后得到一些单字符重复的子串。返回其中最长的子串的长度。 示例1: 输入：text &#x3D; “ababa” 输出：3 示例2: 输入：text &#x3D; “aaabaaa” 输出：6 示例3: 输入：text &#x3D; “aaabbaaa” 输出：4 示例4: 输入：te">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1156. 单字符重复子串的最大长度">
+<meta property="og:url" content="http://wuli-tao.github.io/2023/06/03/Leetcode-1156/index.html">
 <meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="题目描述如果字符串中的所有字符都相同，那么这个字符串是单字符重复的字符串。 给你一个字符串 text，你只能交换其中两个字符一次或者什么都不做，然后得到一些单字符重复的子串。返回其中最长的子串的长度。 示例1: 输入：text &#x3D; “ababa” 输出：3 示例2: 输入：text &#x3D; “aaabaaa” 输出：6 示例3: 输入：text &#x3D; “aaabbaaa” 输出：4 示例4: 输入：te">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-03T02:43:56.000Z">
+<meta property="article:modified_time" content="2023-06-03T03:08:21.407Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="滑动窗口">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://wuli-tao.github.io/archives/2023/"/>
+  <link rel="canonical" href="http://wuli-tao.github.io/2023/06/03/Leetcode-1156/"/>
 
 
 
 
 
-  <title>Archive | MyBlog</title>
+  <title>1156. 单字符重复子串的最大长度 | MyBlog</title>
   
 
 
@@ -140,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,411 +274,230 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/06/03/Leetcode-1156/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/%5Bobject%20Object%5D">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">1156. 单字符重复子串的最大长度</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-06-03T10:43:56+08:00">
+                2023-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 17 posts in total. Keep on posting.
-      </span>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  709 words
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如果字符串中的所有字符都相同，那么这个字符串是单字符重复的字符串。</p>
+<p>给你一个字符串 text，你只能交换其中两个字符一次或者什么都不做，然后得到一些单字符重复的子串。返回其中最长的子串的长度。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>：text = “ababa”</p>
+<p><strong>输出</strong>：3</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>：text = “aaabaaa”</p>
+<p><strong>输出</strong>：6</p>
+<p><strong>示例3</strong>:</p>
+<p><strong>输入</strong>：text = “aaabbaaa”</p>
+<p><strong>输出</strong>：4</p>
+<p><strong>示例4</strong>:</p>
+<p><strong>输入</strong>：text = “aaaaa”</p>
+<p><strong>输出</strong>：5</p>
+<p><strong>示例5</strong>:</p>
+<p><strong>输入</strong>：text = “abcdef”</p>
+<p><strong>输出</strong>：1</p>
+<span id="more"></span>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>我们设 n 为字符串 text 的长度，下标从 0 开始，现在有一段区间 [i,j) （不包括 j ）由相同字符 a 构成，并且该区间两边不存在相同的字符 a，而整个 text 中 a 的出现次数为 count[a]，那么当 count[a]&gt;j−i ，并且 i&gt;0 或者 j&lt;n 时，可以将其他地方出现的 a 与 text[i−1] 或 text[j] 交换，从而得到更长的一段仅包含字符 a 的子串。</p>
+<p>交换后，交换过来的 aaa 可能会使得两段连续的 a 拼接在一起，我们假设 [i,j) 是前面的一段，当 text[j+1]=a 时，我们在找到后面的一段 [j+1,k)，这两段拼接在一起构成更长的子串。注意，我们需要重新判断是否有多余的 a 交换到中间来，因此将拼接后的长度 k−i 与 count[a] 取最小值来更新答案。</p>
+<ul>
+<li><p>如何确定以哪个字符开始计算？</p>
+<p>从第一个字符开始遍历即可</p>
+</li>
+<li><p>如何确定划分的中点</p>
+<p>滑动窗口的形式，三个指针，[left, mid)，[mid + 1, right)为两段，mid 指向第一个和text[left]不同的字符所在位置</p>
+</li>
+<li><p>若是abbaaaaa这样的形式，怎么做到 6 个 a 连在一起</p>
+<p>在第一个a的时候显然是做不到 6 个 a 连在一起，但是在后面5个a的时候，left &gt; 0 并且 5 个 a 是小于 a 的总长度 6 的，所以在第二步时会 +1，相当于在 5 个 a 之前加入一个 a，最后结果是 6</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxRepOpt1</span>(<span class="params">self, text: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        count = collections.Counter(text)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> left <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text)):</span><br><span class="line">            <span class="comment"># 找出第一段以text[i]开头连续的一段</span></span><br><span class="line">            mid = left</span><br><span class="line">            <span class="keyword">while</span> mid &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[mid] == text[left]:</span><br><span class="line">                mid += <span class="number">1</span></span><br><span class="line">            <span class="comment"># 若该段前或后有非相同字符，并且该段出现的字符数小于总字符数，则在当前基础cur_ans上可以+1</span></span><br><span class="line">            cur_ans = mid - left</span><br><span class="line">            <span class="keyword">if</span> cur_ans &lt; count[text[left]] <span class="keyword">and</span> (left &gt; <span class="number">0</span> <span class="keyword">or</span> mid &lt; <span class="built_in">len</span>(text)):</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur_ans + <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 找到与第一段隔一个字符的第二段</span></span><br><span class="line">            right = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> right &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[right] == text[left]:</span><br><span class="line">                right += <span class="number">1</span></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">min</span>(right - left, count[text[left]]))</span><br><span class="line">            left = mid</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
+          
+            <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag"><i class="fa fa-tag"></i> 滑动窗口</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2023">2023</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/06/03/Leetcode-820/" itemprop="url">
-              
-                <span itemprop="name">Leetcode-820</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-06-03T16:34:55+08:00"
-              content="2023-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/06/01/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="next" title="二分查找">
+                <i class="fa fa-chevron-left"></i> 二分查找
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/06/03/Leetcode-1156/" itemprop="url">
-              
-                <span itemprop="name">1156. 单字符重复子串的最大长度</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-06-03T10:43:56+08:00"
-              content="2023-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/06/03/Leetcode-820/" rel="prev" title="Leetcode-820">
+                Leetcode-820 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/06/01/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" itemprop="url">
-              
-                <span itemprop="name">二分查找</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-06-01T10:29:33+08:00"
-              content="2023-06-01" >
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/06/01/Leetcode-2517/" itemprop="url">
-              
-                <span itemprop="name">2517. 礼盒的最大甜蜜度</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-06-01T10:29:17+08:00"
-              content="2023-06-01" >
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/30/Leetcode-1110/" itemprop="url">
-              
-                <span itemprop="name">1110. 删点成林</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-30T10:31:32+08:00"
-              content="2023-05-30" >
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/11/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E4%B8%80%E9%9D%A2/" itemprop="url">
-              
-                <span itemprop="name">今日头条一面</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-11T21:41:46+08:00"
-              content="2023-05-11" >
-          05-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/10/Leetcode-2475/" itemprop="url">
-              
-                <span itemprop="name">2475. 数组中不等三元组的数目</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-10T11:05:44+08:00"
-              content="2023-05-10" >
-          05-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/09/Leetcode-1263/" itemprop="url">
-              
-                <span itemprop="name">1263. 推箱子</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-09T18:11:28+08:00"
-              content="2023-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/07/Leetcode-1010/" itemprop="url">
-              
-                <span itemprop="name">1010. 总持续时间可被 60 整除的歌曲</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-07T15:20:58+08:00"
-              content="2023-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/05/06/Leetcode-1419/" itemprop="url">
-              
-                <span itemprop="name">1419. 数青蛙</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-05-06T10:00:14+08:00"
-              content="2023-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/page/2/">&gt;</a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -680,6 +505,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -700,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -801,6 +639,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -957,6 +811,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

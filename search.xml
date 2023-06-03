@@ -237,6 +237,10 @@
 <span id="more"></span>
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>题目的关键是求从起点移动 k 步而实际在 x 轴上移动的最大区间范围，求出范围内的水果数量即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxTotalFruits</span>(<span class="params">self, fruits: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], startPos: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="number">0</span></span><br><span class="line">        n = <span class="built_in">len</span>(fruits)</span><br><span class="line">        <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">step</span>(<span class="params">left: <span class="built_in">int</span>, right: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> fruits[right][<span class="number">0</span>] &lt;= startPos:</span><br><span class="line">                <span class="keyword">return</span> startPos - fruits[left][<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">elif</span> fruits[left][<span class="number">0</span>] &gt;= startPos:</span><br><span class="line">                <span class="keyword">return</span> fruits[right][<span class="number">0</span>] - startPos</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">abs</span>(startPos - fruits[right][<span class="number">0</span>]), <span class="built_in">abs</span>(startPos - fruits[left][<span class="number">0</span>])) + \</span><br><span class="line">                    fruits[right][<span class="number">0</span>] - fruits[left][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每次固定住窗口右边界</span></span><br><span class="line">        <span class="keyword">while</span> right &lt; n:</span><br><span class="line">            <span class="built_in">sum</span> += fruits[right][<span class="number">1</span>]</span><br><span class="line">            <span class="comment"># 移动左边界</span></span><br><span class="line">            <span class="keyword">while</span> left &lt;= right <span class="keyword">and</span> step(left, right) &gt; k:</span><br><span class="line">                <span class="built_in">sum</span> -= fruits[left][<span class="number">1</span>]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">sum</span>)</span><br><span class="line">            right += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
         <category>刷题</category>
@@ -496,5 +500,82 @@
 </ul>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>要注意集合的开闭问题while left &lt; right or while left &lt;= right，要注意返回值left or left+1。（根据具体题目来判断）</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>1156. 单字符重复子串的最大长度</title>
+    <url>/2023/06/03/Leetcode-1156/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如果字符串中的所有字符都相同，那么这个字符串是单字符重复的字符串。</p>
+<p>给你一个字符串 text，你只能交换其中两个字符一次或者什么都不做，然后得到一些单字符重复的子串。返回其中最长的子串的长度。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>：text = “ababa”</p>
+<p><strong>输出</strong>：3</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>：text = “aaabaaa”</p>
+<p><strong>输出</strong>：6</p>
+<p><strong>示例3</strong>:</p>
+<p><strong>输入</strong>：text = “aaabbaaa”</p>
+<p><strong>输出</strong>：4</p>
+<p><strong>示例4</strong>:</p>
+<p><strong>输入</strong>：text = “aaaaa”</p>
+<p><strong>输出</strong>：5</p>
+<p><strong>示例5</strong>:</p>
+<p><strong>输入</strong>：text = “abcdef”</p>
+<p><strong>输出</strong>：1</p>
+<span id="more"></span>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>我们设 n 为字符串 text 的长度，下标从 0 开始，现在有一段区间 [i,j) （不包括 j ）由相同字符 a 构成，并且该区间两边不存在相同的字符 a，而整个 text 中 a 的出现次数为 count[a]，那么当 count[a]&gt;j−i ，并且 i&gt;0 或者 j&lt;n 时，可以将其他地方出现的 a 与 text[i−1] 或 text[j] 交换，从而得到更长的一段仅包含字符 a 的子串。</p>
+<p>交换后，交换过来的 aaa 可能会使得两段连续的 a 拼接在一起，我们假设 [i,j) 是前面的一段，当 text[j+1]=a 时，我们在找到后面的一段 [j+1,k)，这两段拼接在一起构成更长的子串。注意，我们需要重新判断是否有多余的 a 交换到中间来，因此将拼接后的长度 k−i 与 count[a] 取最小值来更新答案。</p>
+<ul>
+<li><p>如何确定以哪个字符开始计算？</p>
+<p>从第一个字符开始遍历即可</p>
+</li>
+<li><p>如何确定划分的中点</p>
+<p>滑动窗口的形式，三个指针，[left, mid)，[mid + 1, right)为两段，mid 指向第一个和text[left]不同的字符所在位置</p>
+</li>
+<li><p>若是abbaaaaa这样的形式，怎么做到 6 个 a 连在一起</p>
+<p>在第一个a的时候显然是做不到 6 个 a 连在一起，但是在后面5个a的时候，left &gt; 0 并且 5 个 a 是小于 a 的总长度 6 的，所以在第二步时会 +1，相当于在 5 个 a 之前加入一个 a，最后结果是 6</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxRepOpt1</span>(<span class="params">self, text: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        count = collections.Counter(text)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> left <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text)):</span><br><span class="line">            <span class="comment"># 找出第一段以text[i]开头连续的一段</span></span><br><span class="line">            mid = left</span><br><span class="line">            <span class="keyword">while</span> mid &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[mid] == text[left]:</span><br><span class="line">                mid += <span class="number">1</span></span><br><span class="line">            <span class="comment"># 若该段前或后有非相同字符，并且该段出现的字符数小于总字符数，则在当前基础cur_ans上可以+1</span></span><br><span class="line">            cur_ans = mid - left</span><br><span class="line">            <span class="keyword">if</span> cur_ans &lt; count[text[left]] <span class="keyword">and</span> (left &gt; <span class="number">0</span> <span class="keyword">or</span> mid &lt; <span class="built_in">len</span>(text)):</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur_ans + <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 找到与第一段隔一个字符的第二段</span></span><br><span class="line">            right = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> right &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[right] == text[left]:</span><br><span class="line">                right += <span class="number">1</span></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">min</span>(right - left, count[text[left]]))</span><br><span class="line">            left = mid</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>字符串</tag>
+        <tag>滑动窗口</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode-820</title>
+    <url>/2023/06/03/Leetcode-820/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>单词数组 words 的 有效编码 由任意助记字符串 s 和下标数组 indices 组成，且满足：</p>
+<ul>
+<li>words.length == indices.length</li>
+<li>助记字符串 s 以 ‘#’ 字符结尾</li>
+<li>对于每个下标 indices[i] ，s 的一个从 indices[i] 开始、到下一个 ‘#’ 字符结束（但不包括 ‘#’）的 子字符串 恰好与 words[i] 相等</li>
+</ul>
+<p>给你一个单词数组 words ，返回成功对 words 进行编码的最小助记字符串 s 的长度 。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>：words = [“time”, “me”, “bell”]</p>
+<p><strong>输出</strong>：10</p>
+<p><strong>解释</strong>：一组有效编码为 s = “time#bell#” 和 indices = [0, 2, 5] 。</p>
+<p>words[0] = “time” ，s 开始于 indices[0] = 0 到下一个 ‘#’ 结束的子字符串，如加粗部分所示 “time#bell#”</p>
+<p>words[1] = “me” ，s 开始于 indices[1] = 2 到下一个 ‘#’ 结束的子字符串，如加粗部分所示 “time#bell#”</p>
+<p>words[2] = “bell” ，s 开始于 indices[2] = 5 到下一个 ‘#’ 结束的子字符串，如加粗部分所示 “time#bell#”</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>：words = [“t”]</p>
+<p><strong>输出</strong>：2</p>
+<p><strong>解释</strong>：一组有效编码为 s = “t#” 和 indices = [0] 。</p>
+<span id="more"></span>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>如果单词 X 是 Y 的后缀，那么单词 X 就不需要考虑了，因为编码 Y 的时候就同时将 X 编码了。例如，如果 words 中同时有 “me” 和 “time”，我们就可以在不改变答案的情况下不考虑 “me”。</p>
+<p>如果单词 Y 不在任何别的单词 X 的后缀中出现，那么 Y 一定是编码字符串的一部分。</p>
+<p>因此，目标就是保留所有不是其他单词后缀的单词，最后的结果就是这些单词长度加一的总和，因为每个单词编码后后面还需要跟一个 # 符号。</p>
+<ul>
+<li><p>怎么判断该word包不包含在其他word中</p>
+<p>后缀表示，可以将words加入到set中，若该word是其余word的后缀，则在set中删除该word</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumLengthEncoding</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        s = <span class="built_in">set</span>(words)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(word)):</span><br><span class="line">                s.discard(word[i:])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> s:</span><br><span class="line">            ans += <span class="built_in">len</span>(word) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>后缀</tag>
+      </tags>
   </entry>
 </search>
