@@ -543,7 +543,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode-820</title>
+    <title>820. 单词的压缩编码</title>
     <url>/2023/06/03/Leetcode-820/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>单词数组 words 的 有效编码 由任意助记字符串 s 和下标数组 indices 组成，且满足：</p>
 <ul>
