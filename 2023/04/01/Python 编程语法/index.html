@@ -87,7 +87,7 @@
 <meta property="og:description" content="str（字符串）  1234567891011121314151617181920212223242526# 子串sub在str中出现的次数str.count(sub[,start[,end]])str：表示原字符串；sub：表示要检索的字符串；start：指定检索的起始位置，也就是从什么位置开始检测。如果不指定，默认从头开始检索；end：指定检索的终止位置，如果不指定，则表示一直检索到结尾。#">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-01T03:11:09.000Z">
-<meta property="article:modified_time" content="2023-05-30T03:07:08.419Z">
+<meta property="article:modified_time" content="2023-06-04T02:37:35.975Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.6k words
+                  2.9k words
                 </span>
               
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  13 min
+                  14 min
                 </span>
               
             </div>
@@ -427,9 +427,12 @@
 
 
 <h2 id="函数用法"><a href="#函数用法" class="headerlink" title="函数用法"></a>函数用法</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map()会根据提供的函数对指定序列做映射，返回为迭代器。</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>) :</span><br><span class="line">		<span class="keyword">return</span> x ** <span class="number">2</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(square, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))   <span class="comment"># 输出[1, 4, 9, 16, 25]</span></span><br></pre></td></tr></table></figure>
-
-
-
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># global and nonlocal</span></span><br><span class="line">name = <span class="string">&#x27;pythontab&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>()</span><br><span class="line">  <span class="keyword">global</span> name</span><br><span class="line">  name = <span class="string">&#x27;pythontab.com&#x27;</span></span><br><span class="line">func()</span><br><span class="line"><span class="built_in">print</span>(name) <span class="comment"># pythontab.com</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">  name = <span class="string">&#x27;pythontab&#x27;</span></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">foo</span>():</span><br><span class="line">      <span class="keyword">nonlocal</span> name</span><br><span class="line">      name = <span class="string">&#x27;pythontab.com&#x27;</span></span><br><span class="line">  foo()</span><br><span class="line">  <span class="built_in">print</span>(name) <span class="comment"># pythontab.com</span></span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
+<p>主要区别有以下两点：</p>
+<ul>
+<li>两者的功能不同。global 关键字修饰变量后标识该变量是全局变量，对该变量进行修改就是修改全局变量，而 nonlocal 关键字修饰变量后标识该变量是上一级函数中的局部变量，如果上一级函数中不存在该局部变量，nonlocal 位置会发生错误（最上层的函数使用 nonlocal 修饰变量必定会报错）。</li>
+<li>两者使用的范围不同。global 关键字可以用在任何地方，包括最上层函数中和嵌套函数中，即使之前未定义该变量，global 修饰后也可以直接使用，而 nonlocal 关键字只能用于嵌套函数中，并且外层函数中定义了相应的局部变量，否则会发生错误</li>
+</ul>
 
       
     </div>
