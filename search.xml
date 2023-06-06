@@ -581,4 +581,31 @@
         <tag>后缀</tag>
       </tags>
   </entry>
+  <entry>
+    <title>139. 单词拆分</title>
+    <url>/2023/06/06/Leetcode-139/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s 。</p>
+<p><strong>注意</strong>：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>: s = “leetcode”, wordDict = [“leet”, “code”]</p>
+<p><strong>输出</strong>: true</p>
+<p><strong>解释</strong>: 返回 true 因为 “leetcode” 可以由 “leet” 和 “code” 拼接成。</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>: s = “applepenapple”, wordDict = [“apple”, “pen”]</p>
+<p><strong>输出</strong>: true</p>
+<p><strong>解释</strong>: 返回 true 因为 “applepenapple” 可以由 “apple” “pen” “apple” 拼接成。</p>
+<p>注意，你可以重复使用字典中的单词。</p>
+<p><strong>示例3</strong>:</p>
+<p><strong>输入</strong>: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]</p>
+<p><strong>输出</strong>: false</p>
+<span id="more"></span>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>初始化 dp 数组，长度为 n+1。n 为字符串长度。dp[i] 表示 s 的前i位是否可以用wordDict中的单词表示，dp[0] = True。</p>
+<p>遍历字符串的所有子串，遍历开始索引 i，遍历区间 [0,n)：</p>
+<p>遍历结束索引 j，遍历区间 [i+1,n+1)：</p>
+<p>若 dp[i]=True 且 s[i,⋯ ,j) 在 wordlist 中：dp[j]=True。解释：dp[i]=True 说明 s 的前 i 位可以用 wordDict 表示，则 s[i,⋯ ,j) 出现在 wordDict 中，说明 s 的前 j 位可以表示。</p>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wordBreak</span>(<span class="params">self, s: <span class="built_in">str</span>, wordDict: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        dp = [<span class="literal">False</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> dp[i] <span class="keyword">and</span> s[i:j] <span class="keyword">in</span> wordDict:</span><br><span class="line">                    dp[j] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
 </search>
