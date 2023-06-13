@@ -641,4 +641,18 @@
         <tag>贪心</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode-112</title>
+    <url>/2023/06/13/Leetcode-112/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>1171. 从链表中删去总和值为零的连续节点</title>
+    <url>/2023/06/12/Leetcode-1171/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>注意前缀和，相减等于0，直接next指针赋值即可</p>
+]]></content>
+      <tags>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
 </search>
