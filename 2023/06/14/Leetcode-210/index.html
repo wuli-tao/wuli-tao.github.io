@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="二分查找," />
+  <meta name="keywords" content="拓扑排序," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述给你一个正整数数组 price ，其中 price[i] 表示第 i 类糖果的价格，另给你一个正整数 k 。 商店组合 k 类 不同 糖果打包成礼盒出售。礼盒的 甜蜜度 是礼盒中任意两种糖果 价格 绝对差的最小值。 返回礼盒的 最大 甜蜜度。 示例1: 输入：price &#x3D; [13,5,1,8,21,2], k &#x3D; 3 输出：8 解释：选出价格分别为 [13,5,21] 的三类糖果。 礼盒">
+<meta name="description" content="题目描述现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] &#x3D; [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示：[0,1] 。 返回你为了学完所有课程所安排的学习顺序。可能会有多个正">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2517. 礼盒的最大甜蜜度">
-<meta property="og:url" content="http://wuli-tao.github.io/2023/06/01/Leetcode-2517/index.html">
+<meta property="og:title" content="210. 课程表 II">
+<meta property="og:url" content="http://wuli-tao.github.io/2023/06/14/Leetcode-210/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="题目描述给你一个正整数数组 price ，其中 price[i] 表示第 i 类糖果的价格，另给你一个正整数 k 。 商店组合 k 类 不同 糖果打包成礼盒出售。礼盒的 甜蜜度 是礼盒中任意两种糖果 价格 绝对差的最小值。 返回礼盒的 最大 甜蜜度。 示例1: 输入：price &#x3D; [13,5,1,8,21,2], k &#x3D; 3 输出：8 解释：选出价格分别为 [13,5,21] 的三类糖果。 礼盒">
+<meta property="og:description" content="题目描述现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] &#x3D; [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示：[0,1] 。 返回你为了学完所有课程所安排的学习顺序。可能会有多个正">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-06-01T02:29:17.000Z">
-<meta property="article:modified_time" content="2023-06-01T02:44:05.991Z">
+<meta property="article:published_time" content="2023-06-14T09:28:46.000Z">
+<meta property="article:modified_time" content="2023-06-14T09:37:08.008Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="二分查找">
+<meta property="article:tag" content="拓扑排序">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wuli-tao.github.io/2023/06/01/Leetcode-2517/"/>
+  <link rel="canonical" href="http://wuli-tao.github.io/2023/06/14/Leetcode-210/"/>
 
 
 
 
 
-  <title>2517. 礼盒的最大甜蜜度 | MyBlog</title>
+  <title>210. 课程表 II | MyBlog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/06/01/Leetcode-2517/">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/06/14/Leetcode-210/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2517. 礼盒的最大甜蜜度</h1>
+          <h1 class="post-title" itemprop="name headline">210. 课程表 II</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-06-01T10:29:17+08:00">
-                2023-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-06-14T17:28:46+08:00">
+                2023-06-14
               </time>
             
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  725 words
+                  491 words
                 </span>
               
 
@@ -385,41 +385,30 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个正整数数组 price ，其中 price[i] 表示第 i 类糖果的价格，另给你一个正整数 k 。</p>
-<p>商店组合 k 类 不同 糖果打包成礼盒出售。礼盒的 甜蜜度 是礼盒中任意两种糖果 价格 绝对差的最小值。</p>
-<p>返回礼盒的 最大 甜蜜度。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] = [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。</p>
+<p>例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示：[0,1] 。</p>
+<p>返回你为了学完所有课程所安排的学习顺序。可能会有多个正确的顺序，你只要返回 任意一种 就可以了。如果不可能完成所有课程，返回 一个空数组 。</p>
 <p><strong>示例1</strong>:</p>
-<p><strong>输入</strong>：price = [13,5,1,8,21,2], k = 3</p>
-<p><strong>输出</strong>：8</p>
-<p><strong>解释</strong>：选出价格分别为 [13,5,21] 的三类糖果。</p>
-<p>礼盒的甜蜜度为 min(|13 - 5|, |13 - 21|, |5 - 21|) = min(8, 8, 16) = 8 。</p>
-<p>可以证明能够取得的最大甜蜜度就是 8 。</p>
+<p><strong>输入</strong>：numCourses = 2, prerequisites = [[1,0]]</p>
+<p><strong>输出</strong>：[0,1]</p>
+<p><strong>解释</strong>：总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。</p>
 <p><strong>示例2</strong>:</p>
-<p><strong>输入</strong>：price = [1,3,1], k = 2</p>
-<p><strong>输出</strong>：2</p>
-<p><strong>解释</strong>：选出价格分别为 [1,3] 的两类糖果。</p>
-<p>礼盒的甜蜜度为 min(|1 - 3|) = min(2) = 2 。</p>
-<p>可以证明能够取得的最大甜蜜度就是 2 。</p>
+<p><strong>输入</strong>：numCourses = 2, prerequisites = [[1,0]]</p>
+<p><strong>输出</strong>：[0,1]</p>
+<p><strong>解释</strong>：总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。</p>
 <p><strong>示例3</strong>:</p>
-<p><strong>输入</strong>：price = [7,7,7,7], k = 2</p>
-<p><strong>输出</strong>：0</p>
-<p><strong>解释</strong>：从现有的糖果中任选两类糖果，甜蜜度都会是 0 。</p>
+<p><strong>输入</strong>：numCourses = 1, prerequisites = []</p>
+<p><strong>输出</strong>：[0]</p>
 <span id="more"></span>
 
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>「任意两种糖果价格绝对差的最小值」等价于「排序后，任意两种相邻糖果价格绝对差的最小值」。</p>
-<p><font color="#dd0000">如果题目中有「最大化最小值」或者「最小化最大值」，一般都是二分答案。</font></p>
-<p>为什么？对于本题来说，甜蜜度越大，能选择的糖果越少，有单调性，所以可以二分。</p>
-<p>定义 f(d) 表示甜蜜度至少为 d 时，至多能选多少类糖果。</p>
-<p>二分答案 d：</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>经典的拓扑排序题目。从某一节点开始，深度优先遍历所有节点，若为访问且无环，继续以该节点进行深度优先访问。若有环，直接返回空。</p>
+<p>必要元素：</p>
 <ul>
-<li>如果 f(d)≥kf(d)，说明答案至少为 d。</li>
-<li>如果 f(d)&lt;kf(d)，说明答案至多为 d−1。</li>
-<li>二分结束后，设答案为 $d_0$，那么 f(d0)≥k 且 f(d0+1)&lt;k。</li>
+<li>边集edges（某节点开始，所有终止节点）</li>
+<li>访问数组</li>
+<li>答案数组（栈的形式，返回要从栈顶到栈底）</li>
 </ul>
-<p>如何计算 f(d)？对 price 从小到大排序，贪心地计算 f(d)：从 price[0] 开始选；假设上一个选的数是 x，那么当 price[i]≥x + d 时，才可以选 price[i]。</p>
-<p>二分下界可以取 1，上界可以取 ⌊$\frac{max⁡(price)−min⁡(price)}{k−1}$⌋，这是因为最小值不会超过平均值。（平均值指选了 price 最小最大以及中间的一些糖果，相邻糖果差值的平均值。）</p>
-<p>请注意，二分的区间的定义是：尚未确定 f(d) 与 k 的大小关系的 d 的值组成的集合（范围）。在区间左侧外面的 d 都是 f(d)≥k 的，在区间右侧外面的 d 都是 f(d) 的。在理解二分时，请牢记区间的定义及其性质。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maximumTastiness</span>(<span class="params">self, price: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        price.sort()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">mid</span>):</span><br><span class="line">            x, cnt = price[<span class="number">0</span>], <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> price:</span><br><span class="line">                <span class="keyword">if</span> p - x &gt;= mid:</span><br><span class="line">                    cnt += <span class="number">1</span></span><br><span class="line">                    x = p</span><br><span class="line">            <span class="keyword">return</span> cnt &gt;= k</span><br><span class="line"></span><br><span class="line">        left, right = <span class="number">0</span>, (price[-<span class="number">1</span>] - price[<span class="number">0</span>]) // (k - <span class="number">1</span>) + <span class="number">1</span>  <span class="comment"># 此处是开区间</span></span><br><span class="line">        <span class="keyword">while</span> left + <span class="number">1</span> &lt; right:</span><br><span class="line">            mid = (left + right) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> check(mid):</span><br><span class="line">                left = mid  <span class="comment"># 开区间直接赋值mid</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid <span class="comment"># 开区间直接赋值mid</span></span><br><span class="line">        <span class="keyword">return</span> left</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findOrder</span>(<span class="params">self, numCourses: <span class="built_in">int</span>, prerequisites: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        edges = collections.defaultdict(<span class="built_in">list</span>)   <span class="comment"># 某一节点开头的所有终点节点</span></span><br><span class="line">        visited = [<span class="number">0</span>] * numCourses  <span class="comment"># 反问情况，0未访问，1在访问，2已访问</span></span><br><span class="line">        ans = []</span><br><span class="line">        valid = <span class="literal">True</span>    <span class="comment"># 判断是否有环，有环返回[]</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> require <span class="keyword">in</span> prerequisites:</span><br><span class="line">            edges[require[<span class="number">1</span>]].append(require[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">u</span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> valid</span><br><span class="line">            visited[u] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> edges[u]:</span><br><span class="line">                <span class="keyword">if</span> visited[v] == <span class="number">0</span>: <span class="comment"># 为访问</span></span><br><span class="line">                    dfs(v)</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> valid:   <span class="comment"># 若有环直接返回[]</span></span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">elif</span> visited[v] == <span class="number">1</span>:   <span class="comment"># 有环</span></span><br><span class="line">                    valid = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">            visited[u] = <span class="number">2</span></span><br><span class="line">            ans.append(u)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numCourses):</span><br><span class="line">            <span class="keyword">if</span> visited[i] == <span class="number">0</span> <span class="keyword">and</span> valid:</span><br><span class="line">                dfs(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> valid:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -436,7 +425,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag"><i class="fa fa-tag"></i> 二分查找</a>
+            <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 拓扑排序</a>
           
         </div>
       
@@ -464,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/05/30/Leetcode-1110/" rel="next" title="1110. 删点成林">
-                <i class="fa fa-chevron-left"></i> 1110. 删点成林
+              <a href="/2023/06/13/Leetcode-112/" rel="next" title="Leetcode-112">
+                <i class="fa fa-chevron-left"></i> Leetcode-112
               </a>
             
           </div>
@@ -473,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/06/01/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="prev" title="二分查找">
-                二分查找 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

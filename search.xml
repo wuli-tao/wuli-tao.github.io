@@ -697,4 +697,35 @@
         <tag>前缀和</tag>
       </tags>
   </entry>
+  <entry>
+    <title>210. 课程表 II</title>
+    <url>/2023/06/14/Leetcode-210/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] = [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。</p>
+<p>例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示：[0,1] 。</p>
+<p>返回你为了学完所有课程所安排的学习顺序。可能会有多个正确的顺序，你只要返回 任意一种 就可以了。如果不可能完成所有课程，返回 一个空数组 。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>：numCourses = 2, prerequisites = [[1,0]]</p>
+<p><strong>输出</strong>：[0,1]</p>
+<p><strong>解释</strong>：总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>：numCourses = 2, prerequisites = [[1,0]]</p>
+<p><strong>输出</strong>：[0,1]</p>
+<p><strong>解释</strong>：总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。</p>
+<p><strong>示例3</strong>:</p>
+<p><strong>输入</strong>：numCourses = 1, prerequisites = []</p>
+<p><strong>输出</strong>：[0]</p>
+<span id="more"></span>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>经典的拓扑排序题目。从某一节点开始，深度优先遍历所有节点，若为访问且无环，继续以该节点进行深度优先访问。若有环，直接返回空。</p>
+<p>必要元素：</p>
+<ul>
+<li>边集edges（某节点开始，所有终止节点）</li>
+<li>访问数组</li>
+<li>答案数组（栈的形式，返回要从栈顶到栈底）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findOrder</span>(<span class="params">self, numCourses: <span class="built_in">int</span>, prerequisites: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        edges = collections.defaultdict(<span class="built_in">list</span>)   <span class="comment"># 某一节点开头的所有终点节点</span></span><br><span class="line">        visited = [<span class="number">0</span>] * numCourses  <span class="comment"># 反问情况，0未访问，1在访问，2已访问</span></span><br><span class="line">        ans = []</span><br><span class="line">        valid = <span class="literal">True</span>    <span class="comment"># 判断是否有环，有环返回[]</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> require <span class="keyword">in</span> prerequisites:</span><br><span class="line">            edges[require[<span class="number">1</span>]].append(require[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">u</span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> valid</span><br><span class="line">            visited[u] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> edges[u]:</span><br><span class="line">                <span class="keyword">if</span> visited[v] == <span class="number">0</span>: <span class="comment"># 为访问</span></span><br><span class="line">                    dfs(v)</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> valid:   <span class="comment"># 若有环直接返回[]</span></span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">elif</span> visited[v] == <span class="number">1</span>:   <span class="comment"># 有环</span></span><br><span class="line">                    valid = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">            visited[u] = <span class="number">2</span></span><br><span class="line">            ans.append(u)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numCourses):</span><br><span class="line">            <span class="keyword">if</span> visited[i] == <span class="number">0</span> <span class="keyword">and</span> valid:</span><br><span class="line">                dfs(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> valid:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>拓扑排序</tag>
+      </tags>
+  </entry>
 </search>
