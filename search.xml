@@ -728,4 +728,20 @@
         <tag>拓扑排序</tag>
       </tags>
   </entry>
+  <entry>
+    <title>华为GTS一面</title>
+    <url>/2023/06/16/%E5%8D%8E%E4%B8%BAGTS%E4%B8%80%E9%9D%A2/</url>
+    <content><![CDATA[<h1 id="华为GTS一面"><a href="#华为GTS一面" class="headerlink" title="华为GTS一面"></a>华为GTS一面</h1><ul>
+<li>自我介绍</li>
+<li>科研问题</li>
+<li>学校教了什么语言（c和java，python是科研项目自学的）</li>
+<li>合并两个数组，list.append(list)的效果，两个字典求交集</li>
+<li>大数据专业学了啥（数据挖掘，大数据处理hdfs，handop，mapreduce）</li>
+<li>对数据挖掘的理解，数据库</li>
+<li>pandas基本操作（取某一列，将某一列全部str转成int；在某列数据中取出符合条件的数据df.loc[]）</li>
+<li>手撕代码，比较简单，空间换时间+等差数列</li>
+<li>问问题：实习干什么（导师带，完成导师任务）看你想算法还是开发，有转正资格</li>
+</ul>
+]]></content>
+  </entry>
 </search>
