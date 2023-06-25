@@ -734,8 +734,9 @@
     <content><![CDATA[<h1 id="华为GTS一面"><a href="#华为GTS一面" class="headerlink" title="华为GTS一面"></a>华为GTS一面</h1><ul>
 <li>自我介绍</li>
 <li>科研问题</li>
+<li>专利是什么？谁写的（我做的内容，专利书不是我写的）？专利的保护点是什么（专利的创新点，亮点，基于当时的条件，谈工作的价值，背景）</li>
 <li>学校教了什么语言（c和java，python是科研项目自学的）</li>
-<li>合并两个数组，list.append(list)的效果，两个字典求交集</li>
+<li>合并两个数组（自然连接直接用+），list.append(list)的效果，两个字典求交集（放到一个集合set中）</li>
 <li>大数据专业学了啥（数据挖掘，大数据处理hdfs，handop，mapreduce）</li>
 <li>对数据挖掘的理解，数据库</li>
 <li>pandas基本操作（取某一列，将某一列全部str转成int；在某列数据中取出符合条件的数据df.loc[]）</li>
@@ -743,5 +744,58 @@
 <li>问问题：实习干什么（导师带，完成导师任务）看你想算法还是开发，有转正资格</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>剑指 Offer II 003. 前 n 个数字二进制中 1 的个数</title>
+    <url>/2023/06/25/%E5%89%91%E6%8C%87%20Offer%20II%20003/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>: n = 2</p>
+<p><strong>输出</strong>: [0,1,1]</p>
+<p><strong>解释</strong>:</p>
+<p>0 –&gt; 0</p>
+<p>1 –&gt; 1</p>
+<p>2 –&gt; 10</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>: n = 5</p>
+<p><strong>输出</strong>: [0,1,1,2,1,2]</p>
+<p><strong>解释</strong>:</p>
+<p>0 –&gt; 0</p>
+<p>1 –&gt; 1</p>
+<p>2 –&gt; 10</p>
+<p>3 –&gt; 11</p>
+<p>4 –&gt; 100</p>
+<p>5 –&gt; 101</p>
+<span id="more"></span>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>对于所有的数字，只有奇数和偶数两种：</p>
+<ul>
+<li>奇数：二进制表示中，奇数一定比前面那个偶数多一个 1，因为多的就是最低位的 1。</li>
+<li>偶数：二进制表示中，偶数中 1 的个数一定和除以 2 之后的那个数一样多。因为最低位是 0，除以 2 就是右移一位，也就是把那个 0 抹掉而已，所以 1 的个数是不变的。</li>
+</ul>
+<p>所以我们可以得到如下的状态转移方程：</p>
+<ul>
+<li>dp [i] = dp [i-1]，当 i 为奇数</li>
+<li>dp [i] = dp [i/2]，当 i 为偶数</li>
+</ul>
+<p>上面的方程还可进一步合并为： dp [i] = dp [i/2] + i % 2</p>
+<p>通过位运算进一步优化：</p>
+<ul>
+<li>i / 2 可以通过 i &gt;&gt; 1 得到；</li>
+<li>i % 2 可以通过 i &amp; 1 得到；</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>&amp;操作优先级最低，所以（i&amp;1）必须要加括号，不然会导致优先级出错。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countBits</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        dp = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">            dp[i] = dp[i &gt;&gt; <span class="number">1</span>] + (i &amp; <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为GTS二面</title>
+    <url>/2023/06/17/%E5%8D%8E%E4%B8%BAGTS%E4%BA%8C%E9%9D%A2/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>

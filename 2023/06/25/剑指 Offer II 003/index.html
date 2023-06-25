@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="贪心," />
+  <meta name="keywords" content="刷题," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目描述给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。 每个元素 nums[i] 表示从索引 i 向前跳转的最大长度。换句话说，如果你在 nums[i] 处，你可以跳转到任意 nums[i + j] 处:  0 &lt;&#x3D; j &lt;&#x3D; nums[i] i + j &lt; n  返回到达 nums[n - 1] 的最小跳跃次数。生成的测试用例可以到达 nums">
+<meta name="description" content="题目描述给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。 示例1: 输入: n &#x3D; 2 输出: [0,1,1] 解释: 0 –&gt; 0 1 –&gt; 1 2 –&gt; 10 示例2: 输入: n &#x3D; 5 输出: [0,1,1,2,1,2] 解释: 0 –&gt; 0 1 –&gt; 1 2 –&gt; 10 3 –&gt; 11 4 –">
 <meta property="og:type" content="article">
-<meta property="og:title" content="45. 跳跃游戏 II">
-<meta property="og:url" content="http://wuli-tao.github.io/2023/05/04/Leetcode-45/index.html">
+<meta property="og:title" content="剑指 Offer II 003. 前 n 个数字二进制中 1 的个数">
+<meta property="og:url" content="http://wuli-tao.github.io/2023/06/25/%E5%89%91%E6%8C%87%20Offer%20II%20003/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="题目描述给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。 每个元素 nums[i] 表示从索引 i 向前跳转的最大长度。换句话说，如果你在 nums[i] 处，你可以跳转到任意 nums[i + j] 处:  0 &lt;&#x3D; j &lt;&#x3D; nums[i] i + j &lt; n  返回到达 nums[n - 1] 的最小跳跃次数。生成的测试用例可以到达 nums">
+<meta property="og:description" content="题目描述给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。 示例1: 输入: n &#x3D; 2 输出: [0,1,1] 解释: 0 –&gt; 0 1 –&gt; 1 2 –&gt; 10 示例2: 输入: n &#x3D; 5 输出: [0,1,1,2,1,2] 解释: 0 –&gt; 0 1 –&gt; 1 2 –&gt; 10 3 –&gt; 11 4 –">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-04T13:47:29.000Z">
-<meta property="article:modified_time" content="2023-05-07T08:44:25.854Z">
+<meta property="article:published_time" content="2023-06-25T02:10:03.000Z">
+<meta property="article:modified_time" content="2023-06-25T02:15:10.128Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wuli-tao.github.io/2023/05/04/Leetcode-45/"/>
+  <link rel="canonical" href="http://wuli-tao.github.io/2023/06/25/剑指 Offer II 003/"/>
 
 
 
 
 
-  <title>45. 跳跃游戏 II | MyBlog</title>
+  <title>剑指 Offer II 003. 前 n 个数字二进制中 1 的个数 | MyBlog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/05/04/Leetcode-45/">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/06/25/%E5%89%91%E6%8C%87%20Offer%20II%20003/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">45. 跳跃游戏 II</h1>
+          <h1 class="post-title" itemprop="name headline">剑指 Offer II 003. 前 n 个数字二进制中 1 的个数</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-04T21:47:29+08:00">
-                2023-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-06-25T10:10:03+08:00">
+                2023-06-25
               </time>
             
 
@@ -326,28 +326,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">刷题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -370,7 +348,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  292 words
+                  377 words
                 </span>
               
 
@@ -407,25 +385,47 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。</p>
-<p>每个元素 nums[i] 表示从索引 i 向前跳转的最大长度。换句话说，如果你在 nums[i] 处，你可以跳转到任意 nums[i + j] 处:</p>
-<ul>
-<li>0 &lt;= j &lt;= nums[i]</li>
-<li>i + j &lt; n</li>
-</ul>
-<p>返回到达 nums[n - 1] 的最小跳跃次数。生成的测试用例可以到达 nums[n - 1]。</p>
-<p>示例1:</p>
-<p><strong>输入</strong>: nums = [2,3,1,1,4]</p>
-<p><strong>输出</strong>: 2</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。</p>
+<p><strong>示例1</strong>:</p>
+<p><strong>输入</strong>: n = 2</p>
+<p><strong>输出</strong>: [0,1,1]</p>
 <p><strong>解释</strong>:</p>
-<p>跳到最后一个位置的最小跳跃数是 2。</p>
-<p>从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。</p>
-<p>示例2:</p>
-<p><strong>输入</strong>: nums = [2,3,0,1,4]</p>
-<p><strong>输出</strong>: 2</p>
+<p>0 –&gt; 0</p>
+<p>1 –&gt; 1</p>
+<p>2 –&gt; 10</p>
+<p><strong>示例2</strong>:</p>
+<p><strong>输入</strong>: n = 5</p>
+<p><strong>输出</strong>: [0,1,1,2,1,2]</p>
+<p><strong>解释</strong>:</p>
+<p>0 –&gt; 0</p>
+<p>1 –&gt; 1</p>
+<p>2 –&gt; 10</p>
+<p>3 –&gt; 11</p>
+<p>4 –&gt; 100</p>
+<p>5 –&gt; 101</p>
 <span id="more"></span>
 
-<h2 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">jump</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        step = nums[<span class="number">0</span>]</span><br><span class="line">        pos = <span class="number">0</span></span><br><span class="line">        time = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> pos != <span class="built_in">len</span>(nums)-<span class="number">1</span>:</span><br><span class="line">            <span class="built_in">max</span> = <span class="number">0</span></span><br><span class="line">            max_idx = pos</span><br><span class="line">            <span class="keyword">if</span> pos + step &gt;= <span class="built_in">len</span>(nums)-<span class="number">1</span>:</span><br><span class="line">                time += <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(pos+<span class="number">1</span>, pos+step+<span class="number">1</span>):</span><br><span class="line">                    <span class="keyword">if</span> i+nums[i] &gt;= <span class="built_in">max</span>:    <span class="comment"># 此处贪心算法要求跳到i的下一步也要是最远的，所以应该是i+nums[i]而不是nums[i]</span></span><br><span class="line">                        max_idx = i</span><br><span class="line">                        <span class="built_in">max</span> = nums[i]+i</span><br><span class="line">            </span><br><span class="line">            time += <span class="number">1</span></span><br><span class="line">            pos = max_idx</span><br><span class="line">            step = nums[pos]</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> time</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>对于所有的数字，只有奇数和偶数两种：</p>
+<ul>
+<li>奇数：二进制表示中，奇数一定比前面那个偶数多一个 1，因为多的就是最低位的 1。</li>
+<li>偶数：二进制表示中，偶数中 1 的个数一定和除以 2 之后的那个数一样多。因为最低位是 0，除以 2 就是右移一位，也就是把那个 0 抹掉而已，所以 1 的个数是不变的。</li>
+</ul>
+<p>所以我们可以得到如下的状态转移方程：</p>
+<ul>
+<li>dp [i] = dp [i-1]，当 i 为奇数</li>
+<li>dp [i] = dp [i/2]，当 i 为偶数</li>
+</ul>
+<p>上面的方程还可进一步合并为： dp [i] = dp [i/2] + i % 2</p>
+<p>通过位运算进一步优化：</p>
+<ul>
+<li>i / 2 可以通过 i &gt;&gt; 1 得到；</li>
+<li>i % 2 可以通过 i &amp; 1 得到；</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>&amp;操作优先级最低，所以（i&amp;1）必须要加括号，不然会导致优先级出错。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countBits</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        dp = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">            dp[i] = dp[i &gt;&gt; <span class="number">1</span>] + (i &amp; <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -442,7 +442,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="fa fa-tag"></i> 贪心</a>
+            <a href="/tags/%E5%88%B7%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 刷题</a>
           
         </div>
       
@@ -470,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/05/04/Leetcode-2106/" rel="next" title="2106. 摘水果">
-                <i class="fa fa-chevron-left"></i> 2106. 摘水果
+              <a href="/2023/06/17/%E5%8D%8E%E4%B8%BAGTS%E4%BA%8C%E9%9D%A2/" rel="next" title="华为GTS二面">
+                <i class="fa fa-chevron-left"></i> 华为GTS二面
               </a>
             
           </div>
@@ -479,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/05/05/Leetcode-2141/" rel="prev" title="2141. 同时运行 N 台电脑的最长时间">
-                2141. 同时运行 N 台电脑的最长时间 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解题方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li></ol></div>
             
 
           </div>
