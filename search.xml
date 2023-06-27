@@ -484,6 +484,9 @@
 <p>二分下界可以取 1，上界可以取 ⌊$\frac{max⁡(price)−min⁡(price)}{k−1}$⌋，这是因为最小值不会超过平均值。（平均值指选了 price 最小最大以及中间的一些糖果，相邻糖果差值的平均值。）</p>
 <p>请注意，二分的区间的定义是：尚未确定 f(d) 与 k 的大小关系的 d 的值组成的集合（范围）。在区间左侧外面的 d 都是 f(d)≥k 的，在区间右侧外面的 d 都是 f(d) 的。在理解二分时，请牢记区间的定义及其性质。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maximumTastiness</span>(<span class="params">self, price: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        price.sort()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">mid</span>):</span><br><span class="line">            x, cnt = price[<span class="number">0</span>], <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> price:</span><br><span class="line">                <span class="keyword">if</span> p - x &gt;= mid:</span><br><span class="line">                    cnt += <span class="number">1</span></span><br><span class="line">                    x = p</span><br><span class="line">            <span class="keyword">return</span> cnt &gt;= k</span><br><span class="line"></span><br><span class="line">        left, right = <span class="number">0</span>, (price[-<span class="number">1</span>] - price[<span class="number">0</span>]) // (k - <span class="number">1</span>) + <span class="number">1</span>  <span class="comment"># 此处是开区间</span></span><br><span class="line">        <span class="keyword">while</span> left + <span class="number">1</span> &lt; right:</span><br><span class="line">            mid = (left + right) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> check(mid):</span><br><span class="line">                left = mid  <span class="comment"># 开区间直接赋值mid</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid <span class="comment"># 开区间直接赋值mid</span></span><br><span class="line">        <span class="keyword">return</span> left</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>二分查找</tag>
       </tags>
@@ -503,6 +506,9 @@
 </ul>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>要注意集合的开闭问题while left &lt; right or while left &lt;= right，要注意返回值left or left+1。（根据具体题目来判断）</p>
 ]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
   </entry>
   <entry>
     <title>1156. 单字符重复子串的最大长度</title>
@@ -540,6 +546,9 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxRepOpt1</span>(<span class="params">self, text: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        count = collections.Counter(text)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> left <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text)):</span><br><span class="line">            <span class="comment"># 找出第一段以text[i]开头连续的一段</span></span><br><span class="line">            mid = left</span><br><span class="line">            <span class="keyword">while</span> mid &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[mid] == text[left]:</span><br><span class="line">                mid += <span class="number">1</span></span><br><span class="line">            <span class="comment"># 若该段前或后有非相同字符，并且该段出现的字符数小于总字符数，则在当前基础cur_ans上可以+1</span></span><br><span class="line">            cur_ans = mid - left</span><br><span class="line">            <span class="keyword">if</span> cur_ans &lt; count[text[left]] <span class="keyword">and</span> (left &gt; <span class="number">0</span> <span class="keyword">or</span> mid &lt; <span class="built_in">len</span>(text)):</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur_ans + <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 找到与第一段隔一个字符的第二段</span></span><br><span class="line">            right = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> right &lt; <span class="built_in">len</span>(text) <span class="keyword">and</span> text[right] == text[left]:</span><br><span class="line">                right += <span class="number">1</span></span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">min</span>(right - left, count[text[left]]))</span><br><span class="line">            left = mid</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>字符串</tag>
         <tag>滑动窗口</tag>
@@ -577,6 +586,9 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumLengthEncoding</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        s = <span class="built_in">set</span>(words)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(word)):</span><br><span class="line">                s.discard(word[i:])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> s:</span><br><span class="line">            ans += <span class="built_in">len</span>(word) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>后缀</tag>
       </tags>
@@ -604,6 +616,9 @@
 <p>遍历结束索引 j，遍历区间 [i+1,n+1)：</p>
 <p>若 dp[i]=True 且 s[i,⋯ ,j) 在 wordlist 中：dp[j]=True。解释：dp[i]=True 说明 s 的前 i 位可以用 wordDict 表示，则 s[i,⋯ ,j) 出现在 wordDict 中，说明 s 的前 j 位可以表示。</p>
 <h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wordBreak</span>(<span class="params">self, s: <span class="built_in">str</span>, wordDict: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        dp = [<span class="literal">False</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> dp[i] <span class="keyword">and</span> s[i:j] <span class="keyword">in</span> wordDict:</span><br><span class="line">                    dp[j] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>动态规划</tag>
       </tags>
@@ -637,6 +652,9 @@
 <p>计算diff数组，表示reward1与reward2之间的差，然后将diff从大到小排序，取前k大的值加入ans中，就表示第一只老鼠吃了k个奶酪（此时无需知道是哪一个奶酪，因为diff是差值，就是reward1比reward2多出来的部份）。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">miceAndCheese</span>(<span class="params">self, reward1: <span class="type">List</span>[<span class="built_in">int</span>], reward2: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        ans = <span class="built_in">sum</span>(reward2)</span><br><span class="line">        diff = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(reward1)):</span><br><span class="line">            diff.append(reward1[i] - reward2[i])</span><br><span class="line">        diff.sort(reverse=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">            ans += diff[i]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>贪心</tag>
       </tags>
@@ -667,6 +685,9 @@
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p><font color="#dd0000">不一定要用dfs函数，可以直接调用函数本身</font></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hasPathSum</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode], targetSum: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:    <span class="comment"># 节点是否为空</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right:    <span class="comment"># 判断是否为叶子节点</span></span><br><span class="line">            <span class="keyword">return</span> root.val == targetSum</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.hasPathSum(root.left, targetSum-root.val) <span class="keyword">or</span> self.hasPathSum(root.right, targetSum-root.val)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>树</tag>
         <tag>递归</tag>
@@ -693,6 +714,9 @@
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>注意前缀和，相减等于0，直接next指针赋值即可</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeZeroSumSublists</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        hashmap[<span class="number">0</span>] = pre = ListNode(val=<span class="number">0</span>, <span class="built_in">next</span>=head)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            <span class="built_in">sum</span> += head.val</span><br><span class="line">            hashmap[<span class="built_in">sum</span>] = head</span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">        head = pre</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            <span class="built_in">sum</span> += head.val</span><br><span class="line">            head.<span class="built_in">next</span> = hashmap[<span class="built_in">sum</span>].<span class="built_in">next</span></span><br><span class="line">            head = head.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pre.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>前缀和</tag>
       </tags>
@@ -724,6 +748,9 @@
 <li>答案数组（栈的形式，返回要从栈顶到栈底）</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findOrder</span>(<span class="params">self, numCourses: <span class="built_in">int</span>, prerequisites: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        edges = collections.defaultdict(<span class="built_in">list</span>)   <span class="comment"># 某一节点开头的所有终点节点</span></span><br><span class="line">        visited = [<span class="number">0</span>] * numCourses  <span class="comment"># 反问情况，0未访问，1在访问，2已访问</span></span><br><span class="line">        ans = []</span><br><span class="line">        valid = <span class="literal">True</span>    <span class="comment"># 判断是否有环，有环返回[]</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> require <span class="keyword">in</span> prerequisites:</span><br><span class="line">            edges[require[<span class="number">1</span>]].append(require[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">u</span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> valid</span><br><span class="line">            visited[u] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> edges[u]:</span><br><span class="line">                <span class="keyword">if</span> visited[v] == <span class="number">0</span>: <span class="comment"># 为访问</span></span><br><span class="line">                    dfs(v)</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> valid:   <span class="comment"># 若有环直接返回[]</span></span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">elif</span> visited[v] == <span class="number">1</span>:   <span class="comment"># 有环</span></span><br><span class="line">                    valid = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">            visited[u] = <span class="number">2</span></span><br><span class="line">            ans.append(u)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numCourses):</span><br><span class="line">            <span class="keyword">if</span> visited[i] == <span class="number">0</span> <span class="keyword">and</span> valid:</span><br><span class="line">                dfs(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> valid:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>拓扑排序</tag>
       </tags>
@@ -744,6 +771,9 @@
 <li>问问题：实习干什么（导师带，完成导师任务）看你想算法还是开发，有转正资格</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
   </entry>
   <entry>
     <title>剑指 Offer II 003. 前 n 个数字二进制中 1 的个数</title>
@@ -789,6 +819,9 @@
 <li>&amp;操作优先级最低，所以（i&amp;1）必须要加括号，不然会导致优先级出错。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countBits</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        dp = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">            dp[i] = dp[i &gt;&gt; <span class="number">1</span>] + (i &amp; <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>动态规划</tag>
         <tag>位运算</tag>
@@ -807,6 +840,9 @@
 <li>家庭情况</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
   </entry>
   <entry>
     <title>剑指 Offer II 005. 单词长度的最大乘积</title>
@@ -828,6 +864,9 @@
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>将每一个字符对应二进制的某位0或1，形成一个mask。若两字符串mask相与为0，表示两字符串没有公共字母，反之则有公共字母。利用哈希表可以进一步减少对比次数。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 位运算</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProduct</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MAX = <span class="number">0</span></span><br><span class="line">        mask = []</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            temp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(word)):</span><br><span class="line">                temp |= <span class="number">1</span> &lt;&lt; (<span class="built_in">ord</span>(word[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">            mask.append(temp)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(words)-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(words)):</span><br><span class="line">                <span class="keyword">if</span> mask[i] &amp; mask[j] == <span class="number">0</span>:</span><br><span class="line">                    MAX = <span class="built_in">max</span>(MAX, <span class="built_in">len</span>(words[i]) * <span class="built_in">len</span>(words[j]))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> MAX</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入哈希表，减少对比次数</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProduct</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        MAX = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            mask = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> word:</span><br><span class="line">                mask |= <span class="number">1</span> &lt;&lt; (<span class="built_in">ord</span>(j) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">            <span class="keyword">if</span> mask <span class="keyword">not</span> <span class="keyword">in</span> hashmap:</span><br><span class="line">                hashmap[mask] = <span class="built_in">len</span>(word)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hashmap[mask] = <span class="built_in">max</span>(hashmap[mask], <span class="built_in">len</span>(word))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> hashmap.keys():</span><br><span class="line">            <span class="keyword">for</span> y <span class="keyword">in</span> hashmap.keys():</span><br><span class="line">                <span class="keyword">if</span> x &amp; y == <span class="number">0</span>:</span><br><span class="line">                    MAX = <span class="built_in">max</span>(MAX, hashmap[x] * hashmap[y])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> MAX</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>哈希表</tag>
         <tag>位运算</tag>
@@ -863,6 +902,9 @@
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>在第 i 次翻转之后，我们希望 [1,i] 内的所有位都是 1，<font color="#dd0000">这等价于 “前 i 次翻转中下标的最大值等于 iii” </font>。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numTimesAllBlue</span>(<span class="params">self, flips: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        cur_max = <span class="number">0</span> <span class="comment"># 记录下前一轮最大值，这样在循环中max只需要比较两个数，而不需要在比较前i个中的最大值。</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(flips)):</span><br><span class="line">            cur_max = <span class="built_in">max</span>(cur_max, flips[i])</span><br><span class="line">            <span class="keyword">if</span> cur_max == i + <span class="number">1</span>:</span><br><span class="line">                ans += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
       <tags>
         <tag>数组</tag>
       </tags>
