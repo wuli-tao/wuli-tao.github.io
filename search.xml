@@ -909,4 +909,33 @@
         <tag>数组</tag>
       </tags>
   </entry>
+  <entry>
+    <title>剑指 Offer II 008. 和大于等于 target 的最短子数组</title>
+    <url>/2023/07/02/%E5%89%91%E6%8C%87%20Offer%20II%20008/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>二分查找</tag>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大疆一面</title>
+    <url>/2023/08/23/%E5%A4%A7%E7%96%86%E4%B8%80%E9%9D%A2/</url>
+    <content><![CDATA[<p>现在我们有一个相册下载任务的管理器，每个任务都有一个唯一的标识（id），我们希望它能够达到以下的需求：</p>
+<ol>
+<li>可配置最大的任务同时执行数量</li>
+<li>任务能够被动态的添加、删除、查找，希望查找复杂度是O(1)</li>
+<li>当有任务被加入被加入的时候，对应任务的优先级最高，并且最优先执行</li>
+<li>当任务被不断的降级之后，降低到特定的阈值，则会自动暂停</li>
+</ol>
+<p>class taks<br>taskMaxNum = input()<br>queueRun = [] * taskMaxNum<br>queueWait = []<br>taskMap = {}<br>prior = 0</p>
+<p>def add(id):<br>    taskMap[id] = prior<br>  prior += 1</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+  </entry>
 </search>
