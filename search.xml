@@ -938,4 +938,62 @@
         <category>面试</category>
       </categories>
   </entry>
+  <entry>
+    <title>腾讯一面</title>
+    <url>/2023/09/22/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/</url>
+    <content><![CDATA[<h1 id="腾讯客户端一面"><a href="#腾讯客户端一面" class="headerlink" title="腾讯客户端一面"></a>腾讯客户端一面</h1><ul>
+<li><p>自我介绍</p>
+</li>
+<li><p>计算机网络</p>
+<ul>
+<li>TCP和UDP的区别（使用场景，可靠性）</li>
+<li>谁的效率高？</li>
+<li>TCP如何保证可靠性（超时重传，拥塞控制）</li>
+<li>三次握手四次挥手的理解</li>
+</ul>
+</li>
+<li><p>操作系统</p>
+<ul>
+<li>内核态和用户态（不太了解。。。）</li>
+</ul>
+</li>
+<li><p>编程语言</p>
+<ul>
+<li>java jvm实现机制（不会 java。。。）</li>
+</ul>
+</li>
+<li><p>简历上的项目</p>
+</li>
+<li><p>实习经历</p>
+<ul>
+<li>有没有类似RN一样的方法，为什么选用RN（flutter，占用内存，app 大小）</li>
+<li>RN底层实现的原理（通过 JS 渲染，通过 bridge 来让 native 控件反应）</li>
+<li>服务器传回的数据怎么进行跳转（传回 json 数据，然后解析成bean，利用 URI 携带特定信息进行跳转）</li>
+</ul>
+</li>
+<li><p>手撕</p>
+<p>  【TM】实现LRU</p>
+<p>  LRUCache(capacity) 以正整数作为容量 capacity 初始化 LRU 缓存</p>
+<p>  get(key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1.</p>
+<p>  set(key, value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」</p>
+<p>  当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LRUCache</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, capacity</span>) :</span><br><span class="line">        self.capacity = capacity</span><br><span class="line">        self.cache = &#123;&#125;</span><br><span class="line">        self.used = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span> (self, key):</span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">            <span class="keyword">return</span> self.cache[key]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set</span>(<span class="params">self, key, value</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(self.used) &lt; self.capacity:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">                self.used.pop(self.used.index(key))</span><br><span class="line">                self.used.append(key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.used.append(key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp = self.used.pop(<span class="number">0</span>)</span><br><span class="line">            self.cache.delete(temp)</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">                self.used.pop (self.used.index(key))</span><br><span class="line">                self.used.append (key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.used.append (key)</span><br><span class="line">                self.cache[key] = value</span><br></pre></td></tr></table></figure>
+<p>  该写法时间复杂度 $O(n^2)$，可以进行优化</p>
+<ul>
+<li>cache 可以变成 hashset，时间复杂度 $O(1)$</li>
+<li>self.used.pop(self.used.index(key)) 也可以进行优化</li>
+</ul>
+</li>
+<li><p>反问</p>
+<ul>
+<li>需要的技术栈</li>
+<li>业务是什么</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+  </entry>
 </search>

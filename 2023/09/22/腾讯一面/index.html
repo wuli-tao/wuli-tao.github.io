@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="现在我们有一个相册下载任务的管理器，每个任务都有一个唯一的标识（id），我们希望它能够达到以下的需求：  可配置最大的任务同时执行数量 任务能够被动态的添加、删除、查找，希望查找复杂度是O(1) 当有任务被加入被加入的时候，对应任务的优先级最高，并且最优先执行 当任务被不断的降级之后，降低到特定的阈值，则会自动暂停  class takstaskMaxNum &#x3D; input()queueRun &#x3D;">
+<meta name="description" content="腾讯客户端一面 自我介绍  计算机网络  TCP和UDP的区别（使用场景，可靠性） 谁的效率高？ TCP如何保证可靠性（超时重传，拥塞控制） 三次握手四次挥手的理解   操作系统  内核态和用户态（不太了解。。。）   编程语言  java jvm实现机制（不会 java。。。）   简历上的项目  实习经历  有没有类似RN一样的方法，为什么选用RN（flutter，占用内存，app 大小） R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大疆一面">
-<meta property="og:url" content="http://wuli-tao.github.io/2023/08/23/%E5%A4%A7%E7%96%86%E4%B8%80%E9%9D%A2/index.html">
+<meta property="og:title" content="腾讯一面">
+<meta property="og:url" content="http://wuli-tao.github.io/2023/09/22/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="现在我们有一个相册下载任务的管理器，每个任务都有一个唯一的标识（id），我们希望它能够达到以下的需求：  可配置最大的任务同时执行数量 任务能够被动态的添加、删除、查找，希望查找复杂度是O(1) 当有任务被加入被加入的时候，对应任务的优先级最高，并且最优先执行 当任务被不断的降级之后，降低到特定的阈值，则会自动暂停  class takstaskMaxNum &#x3D; input()queueRun &#x3D;">
+<meta property="og:description" content="腾讯客户端一面 自我介绍  计算机网络  TCP和UDP的区别（使用场景，可靠性） 谁的效率高？ TCP如何保证可靠性（超时重传，拥塞控制） 三次握手四次挥手的理解   操作系统  内核态和用户态（不太了解。。。）   编程语言  java jvm实现机制（不会 java。。。）   简历上的项目  实习经历  有没有类似RN一样的方法，为什么选用RN（flutter，占用内存，app 大小） R">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-23T08:32:55.000Z">
-<meta property="article:modified_time" content="2023-09-11T13:00:38.003Z">
+<meta property="article:published_time" content="2023-09-22T12:40:32.000Z">
+<meta property="article:modified_time" content="2023-09-22T13:02:04.021Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://wuli-tao.github.io/2023/08/23/大疆一面/"/>
+  <link rel="canonical" href="http://wuli-tao.github.io/2023/09/22/腾讯一面/"/>
 
 
 
 
 
-  <title>大疆一面 | MyBlog</title>
+  <title>腾讯一面 | MyBlog</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/08/23/%E5%A4%A7%E7%96%86%E4%B8%80%E9%9D%A2/">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/09/22/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">大疆一面</h1>
+          <h1 class="post-title" itemprop="name headline">腾讯一面</h1>
         
 
         <div class="post-meta">
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-08-23T16:32:55+08:00">
-                2023-08-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-09-22T20:40:32+08:00">
+                2023-09-22
               </time>
             
 
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  154 words
+                  485 words
                 </span>
               
 
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 min
+                  2 min
                 </span>
               
             </div>
@@ -406,15 +406,56 @@
       
 
       
-        <p>现在我们有一个相册下载任务的管理器，每个任务都有一个唯一的标识（id），我们希望它能够达到以下的需求：</p>
-<ol>
-<li>可配置最大的任务同时执行数量</li>
-<li>任务能够被动态的添加、删除、查找，希望查找复杂度是O(1)</li>
-<li>当有任务被加入被加入的时候，对应任务的优先级最高，并且最优先执行</li>
-<li>当任务被不断的降级之后，降低到特定的阈值，则会自动暂停</li>
-</ol>
-<p>class taks<br>taskMaxNum = input()<br>queueRun = [] * taskMaxNum<br>queueWait = []<br>taskMap = {}<br>prior = 0</p>
-<p>def add(id):<br>    taskMap[id] = prior<br>  prior += 1</p>
+        <h1 id="腾讯客户端一面"><a href="#腾讯客户端一面" class="headerlink" title="腾讯客户端一面"></a>腾讯客户端一面</h1><ul>
+<li><p>自我介绍</p>
+</li>
+<li><p>计算机网络</p>
+<ul>
+<li>TCP和UDP的区别（使用场景，可靠性）</li>
+<li>谁的效率高？</li>
+<li>TCP如何保证可靠性（超时重传，拥塞控制）</li>
+<li>三次握手四次挥手的理解</li>
+</ul>
+</li>
+<li><p>操作系统</p>
+<ul>
+<li>内核态和用户态（不太了解。。。）</li>
+</ul>
+</li>
+<li><p>编程语言</p>
+<ul>
+<li>java jvm实现机制（不会 java。。。）</li>
+</ul>
+</li>
+<li><p>简历上的项目</p>
+</li>
+<li><p>实习经历</p>
+<ul>
+<li>有没有类似RN一样的方法，为什么选用RN（flutter，占用内存，app 大小）</li>
+<li>RN底层实现的原理（通过 JS 渲染，通过 bridge 来让 native 控件反应）</li>
+<li>服务器传回的数据怎么进行跳转（传回 json 数据，然后解析成bean，利用 URI 携带特定信息进行跳转）</li>
+</ul>
+</li>
+<li><p>手撕</p>
+<p>  【TM】实现LRU</p>
+<p>  LRUCache(capacity) 以正整数作为容量 capacity 初始化 LRU 缓存</p>
+<p>  get(key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1.</p>
+<p>  set(key, value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」</p>
+<p>  当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LRUCache</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, capacity</span>) :</span><br><span class="line">        self.capacity = capacity</span><br><span class="line">        self.cache = &#123;&#125;</span><br><span class="line">        self.used = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span> (self, key):</span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">            <span class="keyword">return</span> self.cache[key]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set</span>(<span class="params">self, key, value</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(self.used) &lt; self.capacity:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">                self.used.pop(self.used.index(key))</span><br><span class="line">                self.used.append(key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.used.append(key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp = self.used.pop(<span class="number">0</span>)</span><br><span class="line">            self.cache.delete(temp)</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> self.cache.keys() :</span><br><span class="line">                self.used.pop (self.used.index(key))</span><br><span class="line">                self.used.append (key)</span><br><span class="line">                self.cache[key] = value</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.used.append (key)</span><br><span class="line">                self.cache[key] = value</span><br></pre></td></tr></table></figure>
+<p>  该写法时间复杂度 $O(n^2)$，可以进行优化</p>
+<ul>
+<li>cache 可以变成 hashset，时间复杂度 $O(1)$</li>
+<li>self.used.pop(self.used.index(key)) 也可以进行优化</li>
+</ul>
+</li>
+<li><p>反问</p>
+<ul>
+<li>需要的技术栈</li>
+<li>业务是什么</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -454,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/07/02/%E5%89%91%E6%8C%87%20Offer%20II%20008/" rel="next" title="剑指 Offer II 008. 和大于等于 target 的最短子数组">
-                <i class="fa fa-chevron-left"></i> 剑指 Offer II 008. 和大于等于 target 的最短子数组
+              <a href="/2023/08/23/%E5%A4%A7%E7%96%86%E4%B8%80%E9%9D%A2/" rel="next" title="大疆一面">
+                <i class="fa fa-chevron-left"></i> 大疆一面
               </a>
             
           </div>
@@ -463,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/09/22/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" rel="prev" title="腾讯一面">
-                腾讯一面 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -518,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -619,6 +665,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%80%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">腾讯客户端一面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
