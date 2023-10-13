@@ -939,8 +939,36 @@
       </categories>
   </entry>
   <entry>
-    <title>腾讯一面</title>
-    <url>/2023/09/22/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/</url>
+    <title>腾讯云客户端一面</title>
+    <url>/2023/10/13/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%80%E9%9D%A2/</url>
+    <content><![CDATA[<h1 id="腾讯云客户端一面"><a href="#腾讯云客户端一面" class="headerlink" title="腾讯云客户端一面"></a>腾讯云客户端一面</h1><ol>
+<li>自我介绍</li>
+<li>项目经历</li>
+<li>Java面向对象如何理解，和面向过程语言的区别</li>
+<li>继承、封装、多态的概念</li>
+<li>Java垃圾回收机制（强引用？弱引用）OC强指针弱指针</li>
+<li>Java容器（使用场景和方法）</li>
+<li>Java和Python的区别（编译、解释）</li>
+<li>四次挥手（过程，为什么要四次）</li>
+<li>多线程相关知识</li>
+<li>操作系统线程管理？？</li>
+<li>Activity生命周期</li>
+<li>设计模式（MVC，MVP，MVVM）</li>
+</ol>
+<h1 id="手撕"><a href="#手撕" class="headerlink" title="手撕"></a>手撕</h1><ol>
+<li><p>遍历一次股票价格数组，得到最大利润</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> prices == []:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        minprice = prices[<span class="number">0</span>]</span><br><span class="line">        maxprofit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(prices)):</span><br><span class="line">            <span class="keyword">if</span> prices[i] &lt; minprice:</span><br><span class="line">                minprice = prices[i]</span><br><span class="line">            <span class="keyword">if</span> prices[i] - minprice &gt; maxprofit:</span><br><span class="line">                maxprofit = prices[i] - minprice</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> maxprofit</span><br></pre></td></tr></table></figure></li>
+<li><p>手写栈，实现pop和push的功能</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>腾讯微信一面</title>
+    <url>/2023/09/22/%E8%85%BE%E8%AE%AF%E5%BE%AE%E4%BF%A1%E4%B8%80%E9%9D%A2/</url>
     <content><![CDATA[<h1 id="腾讯客户端一面"><a href="#腾讯客户端一面" class="headerlink" title="腾讯客户端一面"></a>腾讯客户端一面</h1><ul>
 <li><p>自我介绍</p>
 </li>
@@ -968,7 +996,7 @@
 <ul>
 <li>有没有类似RN一样的方法，为什么选用RN（flutter，占用内存，app 大小）</li>
 <li>RN底层实现的原理（通过 JS 渲染，通过 bridge 来让 native 控件反应）</li>
-<li>服务器传回的数据怎么进行跳转（传回 json 数据，然后解析成bean，利用 URI 携带特定信息进行跳转）</li>
+<li>服务器传回的数据怎么进行跳转（传回 json 数据，然后解析成 bean，利用 URI 携带特定信息进行跳转）</li>
 </ul>
 </li>
 <li><p>手撕</p>
