@@ -946,6 +946,7 @@
 <li>项目经历</li>
 <li>Java面向对象如何理解，和面向过程语言的区别</li>
 <li>继承、封装、多态的概念</li>
+<li>Java类属性（public，protected，private；默认状态是什么？）</li>
 <li>Java垃圾回收机制（强引用？弱引用）OC强指针弱指针</li>
 <li>Java容器（使用场景和方法）</li>
 <li>Java和Python的区别（编译、解释）</li>
