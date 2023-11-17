@@ -1026,4 +1026,58 @@
         <category>面试</category>
       </categories>
   </entry>
+  <entry>
+    <title>Java语法</title>
+    <url>/2023/11/10/Java%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="Java语法"><a href="#Java语法" class="headerlink" title="Java语法"></a>Java语法</h1><p>String(字符串)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取第i个位置的元素</span></span><br><span class="line">s.charAt(i);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set(集合)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新建集合</span></span><br><span class="line">Set&lt;T&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;T&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元素是否包含在set中</span></span><br><span class="line">set.contains(key);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Map(哈希表)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新建哈希表</span></span><br><span class="line">Map&lt;T, T&gt; map = New HashMap&lt;T, T&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加元素</span></span><br><span class="line">map.put(key, value);</span><br><span class="line">map.put(key, map.getOrDefault(key, <span class="number">0</span>) + <span class="number">1</span>);	<span class="comment">// 向哈希表中加入key，若存在则value值+1，否则默认是0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 取值	</span></span><br><span class="line">map.get(key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取所有的key</span></span><br><span class="line">map.keySet();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>常用函数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 最大值，最小值</span></span><br><span class="line">Math.max(a, b), Math.min(a, b);</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>语言</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程</title>
+    <url>/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><ul>
+<li><p>进程、线程、协程</p>
+<ul>
+<li>进程</li>
+<li>线程：是程序内部的一条执行流程</li>
+<li>协程</li>
+</ul>
+</li>
+<li><p>多线程</p>
+<ul>
+<li>概念：从软硬件上实现多条执行流程的技术 (多条线程由 CPU 负责调度执行)</li>
+<li>创建多线程 (两种方式)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 将类声明为 Thread 的子类</span></span><br><span class="line"><span class="comment">优点：编码简单</span></span><br><span class="line"><span class="comment">缺点：线程类已经继承Thread，无法继承其他类，不利于功能的扩展</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">  <span class="comment">// 重写 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest1</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建线程对象</span></span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread</span>();</span><br><span class="line">    <span class="comment">// 启动线程 (必须调用 start() 方法)</span></span><br><span class="line">    t.start()	<span class="comment">// 此时有两个线程，main线程，p线程</span></span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码 (不要把主线程任务放在启动子线程之后)</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">2. 声明一个实现 Runnable 接口的类</span></span><br><span class="line"><span class="comment">优点：任务类只是实现接口，可以继续继承其他类、实现其他接口，扩展性强</span></span><br><span class="line"><span class="comment">缺点：需要多创建一个 Runnable 对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRunnable</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">  <span class="comment">// 实现 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest2</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建任务对象</span></span><br><span class="line">    <span class="type">Runnable</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyRunnable</span>();</span><br><span class="line">    <span class="comment">// 把任务对象交给一个线程对象处理</span></span><br><span class="line">    <span class="comment">// public Thread(Runnable target)</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(target).start();</span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">3. 利用 Callable  接口</span></span><br><span class="line"><span class="comment">优点：可以返回线程执行的结果</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发知识</category>
+      </categories>
+  </entry>
 </search>
