@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/11/23/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -302,7 +302,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url">多线程</a></h1>
+                <a class="post-title-link" href="/2023/11/23/HTTP/" itemprop="url">HTTP</a></h1>
         
 
         <div class="post-meta">
@@ -314,248 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-11-10T10:28:09+08:00">
-                2023-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
-                    <span itemprop="name">开发知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2k words
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  7 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><ul>
-<li><p>进程、线程、协程</p>
-<ul>
-<li>进程：正在运行的程序(软件)就是一个独立的进程</li>
-<li>线程：是程序内部的一条执行流程，一个进程可以同时运行很多歌线程</li>
-<li>协程：</li>
-</ul>
-</li>
-<li><p>多线程</p>
-<ul>
-<li>概念：从软硬件上实现多条执行流程的技术 (多条线程由 CPU 负责调度执行)</li>
-<li>创建多线程 (三种方式)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 将类声明为 Thread 的子类</span></span><br><span class="line"><span class="comment">优点：编码简单</span></span><br><span class="line"><span class="comment">缺点：线程类已经继承Thread，无法继承其他类，不利于功能的扩展</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">  <span class="comment">// 重写 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest1</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建线程对象</span></span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread</span>();</span><br><span class="line">    <span class="comment">// 启动线程 (必须调用 start() 方法)</span></span><br><span class="line">    t.start()	<span class="comment">// 此时有两个线程，main线程，p线程</span></span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码 (不要把主线程任务放在启动子线程之后)</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">2. 声明一个实现 Runnable 接口的类</span></span><br><span class="line"><span class="comment">优点：任务类只是实现接口，可以继续继承其他类、实现其他接口，扩展性强</span></span><br><span class="line"><span class="comment">缺点：需要多创建一个 Runnable 对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRunnable</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">  <span class="comment">// 实现 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest2</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建任务对象</span></span><br><span class="line">    <span class="type">Runnable</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyRunnable</span>();</span><br><span class="line">    <span class="comment">// 把任务对象交给一个线程对象处理</span></span><br><span class="line">    <span class="comment">// public Thread(Runnable target)</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(target).start();</span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">3. 利用 Callable  接口</span></span><br><span class="line"><span class="comment">优点：任务类只是实现接口，可以继续继承其他类、实现其他接口，扩展性强，可以返回线程执行的结果</span></span><br><span class="line"><span class="comment">缺点：编码复杂一点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyCallable</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;V&gt; &#123;</span><br><span class="line">  <span class="comment">// 重写 call() 方法</span></span><br><span class="line">  <span class="keyword">public</span> V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">return</span> V 类型变量</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest3</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建一个 Callable 对象</span></span><br><span class="line">    Callable&lt;V&gt; call = <span class="keyword">new</span> <span class="title class_">MyCallable</span>();</span><br><span class="line">    <span class="comment">// 把 Callable 对象封装成一个 FutureTask 对象(任务对象)</span></span><br><span class="line">    <span class="comment">// FutureTask 的作用？</span></span><br><span class="line">    <span class="comment">// 1. 是一个任务对象，实现了 Runnable 对象</span></span><br><span class="line">    <span class="comment">// 2. 可以在线程执行完毕后，用 FutureTask 对象调用 get() 方法获取线程执行完毕后的结果</span></span><br><span class="line">    FeatureTask&lt;V&gt; f1 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(call);</span><br><span class="line">    <span class="comment">// 把任务对象交给一个 Thread 对象</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(f1).start();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取线程执行完毕后返回的结果</span></span><br><span class="line">    <span class="comment">// 注意: 如果执行到这，假如上面的线程还没有执行完毕</span></span><br><span class="line">    <span class="comment">// 这里的代码会暂停，等待上面线程执行完毕后才会获取结果</span></span><br><span class="line">    <span class="type">V</span> <span class="variable">res</span> <span class="operator">=</span> f1.get()</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>线程安全</p>
-<ul>
-<li><p>出现的原因：存在多个线程，同时访问一个共享资源， 存在修改该共享资源</p>
-</li>
-<li><p>解决方法：线程同步</p>
-<ul>
-<li><p>同步块：把访问共享资源的核心代码给上锁，以此保证线程安全</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 对于当前同时执行的线程来说，同步锁必须是同一个对象</span></span><br><span class="line"><span class="comment">2. 建议使用共享资源作为锁对象，对于实例方法建议使用this作为锁对象；静态方法建议使用字节码(类名.class)作为锁对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">synchronized</span> (同步锁) &#123;</span><br><span class="line">  访问共享资源的核心代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>同步方法：把访问共享资源的核心方法给上锁，以此保证线程安全</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名称(形参列表) &#123;</span><br><span class="line">  操作共享资源的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>Lock锁：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">Lock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();	<span class="comment">// 获得Lock锁的实现类对象。建议加上final，不能被替换</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  lock.lock();		<span class="comment">// 加锁</span></span><br><span class="line">  ......</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">  lock.unlock();	<span class="comment">// 解锁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>线程通信（生产者消费者）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 下面的方法应该使用当前同步锁对象进行调用</span></span><br><span class="line"><span class="comment">2. 当抢占锁执行的任务完成时，要先唤醒其他(notifyAll())再等待自己(wait())</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">wait</span><span class="params">()</span>;			<span class="comment">// 让当前线程等待并释放所占锁，直到另一个线程调用notify()方法或notifyAll()方法</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">notify</span><span class="params">()</span>;		<span class="comment">// 唤醒正在等待的单个进程</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">notifyAll</span><span class="params">()</span>;	<span class="comment">// 唤醒正在等待的所有进程</span></span><br></pre></td></tr></table></figure></li>
-<li><p>线程池</p>
-<ul>
-<li><p>概念：线程池就是一个可以复用线程的技术</p>
-</li>
-<li><p>创建线程池：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 使用 ExecutorService 的实现类 ThreadPoolExecutor 自创建一个线程池对象</span></span><br><span class="line"><span class="comment">public ThreadPoolExecutor (int corePoolSize, int maximumPoolSize, long 						keepAliveTime, Timeunit unit, Blockingqueue‹Runnable&gt; workqueue, 						ThreadFactory threadFactory, RejectedExecutionHandler)</span></span><br><span class="line"><span class="comment">• corePoolSize：指定线程池的核心线程的数量</span></span><br><span class="line"><span class="comment">• maximumPoolSize：指定线程池的最大线程数量</span></span><br><span class="line"><span class="comment">• keepAliveTime：指定临时线程的存活时间</span></span><br><span class="line"><span class="comment">• unit：指定临时线程存活的时间单位（秒、分、时、天） TimeUnit.XXXXXXX</span></span><br><span class="line"><span class="comment">• workQueue：指定线程池的任务队列 new ArrayBlockingQueue&lt;&gt;(int length)</span></span><br><span class="line"><span class="comment">• threadFactory：指定线程池的线程工厂 Executors.defaultThreadFactory()</span></span><br><span class="line"><span class="comment">• handler：指定线程池的任务拒绝策略（线程都在忙，任务队列也满了，新任务来了该怎么处理） 			new ThreadPoolExecutor.AbortPolicy() 抛异常</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.DiscardPolicy() 直接丢弃，不抛异常(不推荐)</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.DiscardOldestPolicy() 抛弃队列中等待最久的任务，再加入</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.CallerRunsPolicy()	由主线程负责调用任务的run()方法从而绕过线程池直接执行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="type">ExecutorService</span> <span class="variable">pool</span> <span class="operator">=</span> nwe <span class="title function_">ThreadPoolExecutor</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, TimeUnit.SECONDS, new ArrayBlockingQueue&lt;&gt;(<span class="number">4</span>)</span>, Executors.defaultThreadFactory(), <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.AbortPolicy())</span><br><span class="line">                           </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">2. 使用 Executors(线程池工具类) 调用方法返回不同特点的线程池对象，其底层也是基于线程池的实现类 ThreadPoolExecutor 创建线程池的，不适用于大型并发场景</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newFixedThreadPool(int nThreads) 创建固定线程数量的线程池，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程替代它</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newsingleThreadExecutor() 创建只有一个线程的线程池对象，如果该线程出现异常而结束，那么线程池会补充一个新线程</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newCachedThreadPoo() 线程数量随着任务增加而增加，如果线程任务执行完毕且空闲了60s则会被回收掉</span></span><br><span class="line"><span class="comment">	 public static ScheduledExecutorservice newScheduledThreadPoo(int corePoolsize) 创建一个线程池，可以实现在给定的延迟后运行任务，或者定期执行任务</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="type">ExecutorService</span> <span class="variable">pool</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>注意：<ol>
-<li>新任务提交时发现核心线程都在忙(核心线程在忙不占用任务队列)，任务队列也满了，并且还可以创建临时线程，此时才会创建临时线程</li>
-<li>核心线程和临时线程都在忙，任务队列也满了，新的任务过来的时候才会开始拒绝任务</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>线程池处理 Runnable 任务(void execute(Runnable))</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Runnable</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyRunnable</span>();</span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);	<span class="comment">// 任务队列满了</span></span><br><span class="line"><span class="comment">// 到了临时线程创建的时机</span></span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line"><span class="comment">// 到了新任务拒绝的时机</span></span><br><span class="line">pool.execute(target);</span><br><span class="line"></span><br><span class="line">pool.shutdown();			<span class="comment">// 等线程池的任务全部执行完毕后，再关闭线程池</span></span><br><span class="line">pool.shotdownNow();		<span class="comment">// 立即关闭线程池！不管任务是否执行完毕！</span></span><br></pre></td></tr></table></figure></li>
-<li><p>线程池处理 Callable 任务(Future<T> submit(Callable<T>))</T></T></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;V&gt; f1 = pool.submit(<span class="keyword">new</span> <span class="title class_">MyCallable</span>());</span><br><span class="line">f1.get();</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>线程状态</p>
-<ul>
-<li>New(新建)：线程刚被创建，但是并未启动</li>
-<li>Runnable(可运行)：线程已经调用了 start()，等待CPU调度</li>
-<li>Blocked(锁阻塞)：线程在执行的时候未竞争到锁对象，则该线程进入 Blocked 状态</li>
-<li>Waiting(无限等待)：一个线程进入 waiting 状态，另一个线程调用 notify 或者 notifyAll 方法才能够唤醒</li>
-<li>Timed Waiting(计时等待)：同 waiting 状态，有几个方法(sleep, wait)有超时参数，调用他们将进入TimedWaiting状态</li>
-<li>Teminated(被终止)：因为run方法正常退出而死亡，或者因为没有捕获的异常终止了run方法而死亡</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/11/10/HTTP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/%5Bobject%20Object%5D">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/11/10/HTTP/" itemprop="url">HTTP</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-11-10T10:28:09+08:00">
-                2023-11-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-11-23T11:20:34+08:00">
+                2023-11-23
               </time>
             
 
@@ -690,6 +450,246 @@
 </li>
 </ul>
 <p>来源：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6963931777962344455">https://juejin.cn/post/6963931777962344455</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wuli-tao.github.io/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/%5Bobject%20Object%5D">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url">多线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-11-10T10:28:09+08:00">
+                2023-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">开发知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2k words
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><ul>
+<li><p>进程、线程、协程</p>
+<ul>
+<li>进程：正在运行的程序(软件)就是一个独立的进程</li>
+<li>线程：是程序内部的一条执行流程，一个进程可以同时运行很多个线程，线程是资源调度的最小单位，多条线程共享改进程中的全部系统资源。</li>
+<li>协程：比线程更加轻量级的微线程，一个线程可以拥有多个协程。</li>
+</ul>
+</li>
+<li><p>多线程</p>
+<ul>
+<li>概念：从软硬件上实现多条执行流程的技术 (多条线程由 CPU 负责调度执行)</li>
+<li>创建多线程 (三种方式)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 将类声明为 Thread 的子类</span></span><br><span class="line"><span class="comment">优点：编码简单</span></span><br><span class="line"><span class="comment">缺点：线程类已经继承Thread，无法继承其他类，不利于功能的扩展</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">  <span class="comment">// 重写 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest1</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建线程对象</span></span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread</span>();</span><br><span class="line">    <span class="comment">// 启动线程 (必须调用 start() 方法)</span></span><br><span class="line">    t.start()	<span class="comment">// 此时有两个线程，main线程，p线程</span></span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码 (不要把主线程任务放在启动子线程之后)</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">2. 声明一个实现 Runnable 接口的类</span></span><br><span class="line"><span class="comment">优点：任务类只是实现接口，可以继续继承其他类、实现其他接口，扩展性强</span></span><br><span class="line"><span class="comment">缺点：需要多创建一个 Runnable 对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyRunnable</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">  <span class="comment">// 实现 run() 方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 	线程的执行任务</span></span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest2</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建任务对象</span></span><br><span class="line">    <span class="type">Runnable</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyRunnable</span>();</span><br><span class="line">    <span class="comment">// 把任务对象交给一个线程对象处理</span></span><br><span class="line">    <span class="comment">// public Thread(Runnable target)</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(target).start();</span><br><span class="line">      </span><br><span class="line">    ......	<span class="comment">// 主线程代码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">3. 利用 Callable  接口</span></span><br><span class="line"><span class="comment">优点：任务类只是实现接口，可以继续继承其他类、实现其他接口，扩展性强，可以返回线程执行的结果</span></span><br><span class="line"><span class="comment">缺点：编码复杂一点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyCallable</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;V&gt; &#123;</span><br><span class="line">  <span class="comment">// 重写 call() 方法</span></span><br><span class="line">  <span class="keyword">public</span> V <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">return</span> V 类型变量</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadTest3</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建一个 Callable 对象</span></span><br><span class="line">    Callable&lt;V&gt; call = <span class="keyword">new</span> <span class="title class_">MyCallable</span>();</span><br><span class="line">    <span class="comment">// 把 Callable 对象封装成一个 FutureTask 对象(任务对象)</span></span><br><span class="line">    <span class="comment">// FutureTask 的作用？</span></span><br><span class="line">    <span class="comment">// 1. 是一个任务对象，实现了 Runnable 对象</span></span><br><span class="line">    <span class="comment">// 2. 可以在线程执行完毕后，用 FutureTask 对象调用 get() 方法获取线程执行完毕后的结果</span></span><br><span class="line">    FeatureTask&lt;V&gt; f1 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(call);</span><br><span class="line">    <span class="comment">// 把任务对象交给一个 Thread 对象</span></span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(f1).start();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取线程执行完毕后返回的结果</span></span><br><span class="line">    <span class="comment">// 注意: 如果执行到这，假如上面的线程还没有执行完毕</span></span><br><span class="line">    <span class="comment">// 这里的代码会暂停，等待上面线程执行完毕后才会获取结果</span></span><br><span class="line">    <span class="type">V</span> <span class="variable">res</span> <span class="operator">=</span> f1.get()</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>线程安全</p>
+<ul>
+<li><p>出现的原因：存在多个线程，同时访问一个共享资源， 存在修改该共享资源</p>
+</li>
+<li><p>解决方法：线程同步</p>
+<ul>
+<li><p>同步块：把访问共享资源的核心代码给上锁，以此保证线程安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 对于当前同时执行的线程来说，同步锁必须是同一个对象</span></span><br><span class="line"><span class="comment">2. 建议使用共享资源作为锁对象，对于实例方法建议使用this作为锁对象；静态方法建议使用字节码(类名.class)作为锁对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">synchronized</span> (同步锁) &#123;</span><br><span class="line">  访问共享资源的核心代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>同步方法：把访问共享资源的核心方法给上锁，以此保证线程安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="keyword">synchronized</span> 返回值类型 方法名称(形参列表) &#123;</span><br><span class="line">  操作共享资源的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Lock锁：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">Lock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();	<span class="comment">// 获得Lock锁的实现类对象。建议加上final，不能被替换</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  lock.lock();		<span class="comment">// 加锁</span></span><br><span class="line">  ......</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">  lock.unlock();	<span class="comment">// 解锁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>线程通信（生产者消费者）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 下面的方法应该使用当前同步锁对象进行调用</span></span><br><span class="line"><span class="comment">2. 当抢占锁执行的任务完成时，要先唤醒其他(notifyAll())再等待自己(wait())</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">wait</span><span class="params">()</span>;			<span class="comment">// 让当前线程等待并释放所占锁，直到另一个线程调用notify()方法或notifyAll()方法</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">notify</span><span class="params">()</span>;		<span class="comment">// 唤醒正在等待的单个进程</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">notifyAll</span><span class="params">()</span>;	<span class="comment">// 唤醒正在等待的所有进程</span></span><br></pre></td></tr></table></figure></li>
+<li><p>线程池</p>
+<ul>
+<li><p>概念：线程池就是一个可以复用线程的技术</p>
+</li>
+<li><p>创建线程池：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 使用 ExecutorService 的实现类 ThreadPoolExecutor 自创建一个线程池对象</span></span><br><span class="line"><span class="comment">public ThreadPoolExecutor (int corePoolSize, int maximumPoolSize, long 						keepAliveTime, Timeunit unit, Blockingqueue‹Runnable&gt; workqueue, 						ThreadFactory threadFactory, RejectedExecutionHandler)</span></span><br><span class="line"><span class="comment">• corePoolSize：指定线程池的核心线程的数量</span></span><br><span class="line"><span class="comment">• maximumPoolSize：指定线程池的最大线程数量</span></span><br><span class="line"><span class="comment">• keepAliveTime：指定临时线程的存活时间</span></span><br><span class="line"><span class="comment">• unit：指定临时线程存活的时间单位（秒、分、时、天） TimeUnit.XXXXXXX</span></span><br><span class="line"><span class="comment">• workQueue：指定线程池的任务队列 new ArrayBlockingQueue&lt;&gt;(int length)</span></span><br><span class="line"><span class="comment">• threadFactory：指定线程池的线程工厂 Executors.defaultThreadFactory()</span></span><br><span class="line"><span class="comment">• handler：指定线程池的任务拒绝策略（线程都在忙，任务队列也满了，新任务来了该怎么处理） 			new ThreadPoolExecutor.AbortPolicy() 抛异常</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.DiscardPolicy() 直接丢弃，不抛异常(不推荐)</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.DiscardOldestPolicy() 抛弃队列中等待最久的任务，再加入</span></span><br><span class="line"><span class="comment">		new ThreadPoolExecutor.CallerRunsPolicy()	由主线程负责调用任务的run()方法从而绕过线程池直接执行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="type">ExecutorService</span> <span class="variable">pool</span> <span class="operator">=</span> nwe <span class="title function_">ThreadPoolExecutor</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, TimeUnit.SECONDS, new ArrayBlockingQueue&lt;&gt;(<span class="number">4</span>)</span>, Executors.defaultThreadFactory(), <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.AbortPolicy())</span><br><span class="line">                           </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">2. 使用 Executors(线程池工具类) 调用方法返回不同特点的线程池对象，其底层也是基于线程池的实现类 ThreadPoolExecutor 创建线程池的，不适用于大型并发场景</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newFixedThreadPool(int nThreads) 创建固定线程数量的线程池，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程替代它</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newsingleThreadExecutor() 创建只有一个线程的线程池对象，如果该线程出现异常而结束，那么线程池会补充一个新线程</span></span><br><span class="line"><span class="comment">	 public static ExecutorService newCachedThreadPoo() 线程数量随着任务增加而增加，如果线程任务执行完毕且空闲了60s则会被回收掉</span></span><br><span class="line"><span class="comment">	 public static ScheduledExecutorservice newScheduledThreadPoo(int corePoolsize) 创建一个线程池，可以实现在给定的延迟后运行任务，或者定期执行任务</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="type">ExecutorService</span> <span class="variable">pool</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<ol>
+<li>新任务提交时发现核心线程都在忙(核心线程在忙不占用任务队列)，任务队列也满了，并且还可以创建临时线程，此时才会创建临时线程</li>
+<li>核心线程和临时线程都在忙，任务队列也满了，新的任务过来的时候才会开始拒绝任务</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>线程池处理 Runnable 任务(void execute(Runnable))</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Runnable</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyRunnable</span>();</span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);	<span class="comment">// 线程池会自动创建一个新线程，自动处理这个任务，自动执行</span></span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);	<span class="comment">// 任务队列满了</span></span><br><span class="line"><span class="comment">// 到了临时线程创建的时机</span></span><br><span class="line">pool.execute(target);</span><br><span class="line">pool.execute(target);</span><br><span class="line"><span class="comment">// 到了新任务拒绝的时机</span></span><br><span class="line">pool.execute(target);</span><br><span class="line"></span><br><span class="line">pool.shutdown();			<span class="comment">// 等线程池的任务全部执行完毕后，再关闭线程池</span></span><br><span class="line">pool.shotdownNow();		<span class="comment">// 立即关闭线程池！不管任务是否执行完毕！</span></span><br></pre></td></tr></table></figure></li>
+<li><p>线程池处理 Callable 任务(Future<T> submit(Callable<T>))</T></T></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;V&gt; f1 = pool.submit(<span class="keyword">new</span> <span class="title class_">MyCallable</span>());</span><br><span class="line">f1.get();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>线程状态</p>
+<ul>
+<li>New(新建)：线程刚被创建，但是并未启动</li>
+<li>Runnable(可运行)：线程已经调用了 start()，等待CPU调度</li>
+<li>Blocked(锁阻塞)：线程在执行的时候未竞争到锁对象，则该线程进入 Blocked 状态</li>
+<li>Waiting(无限等待)：一个线程进入 waiting 状态，另一个线程调用 notify 或者 notifyAll 方法才能够唤醒</li>
+<li>Timed Waiting(计时等待)：同 waiting 状态，有几个方法(sleep, wait)有超时参数，调用他们将进入TimedWaiting状态</li>
+<li>Teminated(被终止)：因为run方法正常退出而死亡，或者因为没有捕获的异常终止了run方法而死亡</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -2350,11 +2350,11 @@
       
       
         <li class="recent_posts_li">
-          <a href="/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程" target="_blank">多线程</a>
+          <a href="/2023/11/23/HTTP/" title="HTTP" target="_blank">HTTP</a>
         </li>
       
         <li class="recent_posts_li">
-          <a href="/2023/11/10/HTTP/" title="HTTP" target="_blank">HTTP</a>
+          <a href="/2023/11/10/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程" target="_blank">多线程</a>
         </li>
       
         <li class="recent_posts_li">
